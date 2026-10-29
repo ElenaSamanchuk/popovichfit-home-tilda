@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="ru" data-sales="open">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f5f5f5">
+<title>POPOVICHFIT. Онлайн фитнес-клуб Натальи Попович</title>
+<meta name="description" content="Онлайн фитнес-клуб POPOVICHFIT: комплексная работа с телом — осанка, ягодицы, тазовое дно, плоский живот. Старт следующего потока — 9 ноября.">
+<link rel="icon" href="favicon.ico">
+<link rel="preload" href="fonts/involve/Involve-600__Involve-SemiBold.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="fonts/Manrope-500-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* ───────────── шрифты проекта ───────────── */
+@font-face{font-family:Involve;font-weight:400;font-style:normal;font-display:swap;src:url(fonts/involve/Involve-400__Manrope-SemiBold.woff) format("woff")}
+@font-face{font-family:Involve;font-weight:500;font-style:normal;font-display:swap;src:url(fonts/involve/Involve-500__Involve-Medium.woff) format("woff")}
+@font-face{font-family:Involve;font-weight:600;font-style:normal;font-display:swap;src:url(fonts/involve/Involve-600__Involve-SemiBold.woff) format("woff")}
+@font-face{font-family:Involve;font-weight:700;font-style:normal;font-display:swap;src:url(fonts/involve/Involve-700__Involve-Bold.woff) format("woff")}
+@font-face{font-family:Manrope;font-weight:400;font-style:normal;font-display:swap;src:url(fonts/Manrope-400-cyrillic.woff2) format("woff2");unicode-range:U+301,U+400-45F,U+490-491,U+4B0-4B1,U+2116}
+@font-face{font-family:Manrope;font-weight:400;font-style:normal;font-display:swap;src:url(fonts/Manrope-400-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Manrope;font-weight:500;font-style:normal;font-display:swap;src:url(fonts/Manrope-500-cyrillic.woff2) format("woff2");unicode-range:U+301,U+400-45F,U+490-491,U+4B0-4B1,U+2116}
+@font-face{font-family:Manrope;font-weight:500;font-style:normal;font-display:swap;src:url(fonts/Manrope-500-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Manrope;font-weight:600;font-style:normal;font-display:swap;src:url(fonts/Manrope-600-cyrillic.woff2) format("woff2");unicode-range:U+301,U+400-45F,U+490-491,U+4B0-4B1,U+2116}
+@font-face{font-family:Manrope;font-weight:600;font-style:normal;font-display:swap;src:url(fonts/Manrope-600-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Manrope;font-weight:700;font-style:normal;font-display:swap;src:url(fonts/Manrope-700-cyrillic.woff2) format("woff2");unicode-range:U+301,U+400-45F,U+490-491,U+4B0-4B1,U+2116}
+@font-face{font-family:Manrope;font-weight:700;font-style:normal;font-display:swap;src:url(fonts/Manrope-700-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+/* ───────────── токены: значения оригинального сайта ───────────── */
+:root{
+  --ink:#303030; --sub:#616161; --muted:#9d9da0; --line:#e3e3e3; --card:#f8f8f8; --bg:#fff; --tint:#f5f5f5;
+  --blue:#4f86c4; --blue-deep:#3e78b8; --blue-soft:#6297d2; --blue-text:#2278d8; --light:#e5f1ff; --pink:#f83e60;
+  --grad:linear-gradient(52deg,#6297d2 4%,#3e78b8 96%);
+  --lime:#cdff50; --lime-text:#355404;
+  --grad-pink:linear-gradient(13deg,#f8a2b4 15%,#ee869d 85%);
+  --shadow-btn:0 2px 3px #8190a959;
+  --shadow-card:0 2px 14px rgba(45,46,54,.06);
+  /* скругления как на оригинальном сайте */
+  --r-xl:12px;  /* крупные блоки */
+  --r-lg:10px;  /* карточки */
+  --r-md:8px;   /* кнопки, мелкие плашки */
+  --r-sm:6px;   /* вложенные элементы */
+  --pill:99px;  /* метки-«таблетки» */
+  --font:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --display:"Involve","Manrope",sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --gut:20px; --gap:16px; --sec:clamp(44px,5vw,80px); --max:1160px; --hdr:40px;
+}
+@media (min-width:768px){:root{--gut:24px;--gap:20px}}
+@media (min-width:1024px){:root{--gut:32px;--gap:24px;--hdr:44px}}
+
+/* ───────────── база ───────────── */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:calc(var(--hdr) + 12px)}
+body{margin:0;font:400 15px/1.55 var(--font);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none;padding:0}
+h1,h2,h3,h4,p,ul,ol,dl,dd,figure,blockquote{margin:0;padding:0}
+ul,ol{list-style:none}
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;letter-spacing:-.01em;line-height:1.15;text-wrap:balance}
+p,li,dd,blockquote{text-wrap:pretty}
+:focus-visible{outline:3px solid var(--blue-text);outline-offset:3px;border-radius:var(--r-sm)}
+.wrap{width:100%;max-width:calc(var(--max) + var(--gut)*2);margin-inline:auto;padding-inline:var(--gut)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 16px;border-radius:var(--r-md);z-index:200}
+.skip:focus{left:8px}
+[hidden]{display:none!important}
+.ic{width:1em;height:1em;flex:none}
+.ic--flip{transform:scaleX(-1)}
+
+/* ───────────── элементы ───────────── */
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--blue);flex:none;box-shadow:0 0 0 4px rgba(79,134,196,.18)}
+.dot--pink{background:var(--pink);box-shadow:0 0 0 4px rgba(248,62,96,.18);animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(248,62,96,0)}}
+
+.tag{display:inline-flex;align-items:center;font:600 11px/1 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--blue-text);background:var(--light);padding:8px 13px;border-radius:var(--pill)}
+.tag--inv{background:rgba(255,255,255,.2);color:#fff}
+
+.btn{--h:46px;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:var(--h);padding:0 22px;border-radius:var(--r-md);font:600 12px/1.15 var(--display);letter-spacing:.05em;text-transform:uppercase;text-align:center;transition:transform .25s var(--ease),box-shadow .25s,background .25s;-webkit-tap-highlight-color:transparent}
+.btn .ic{font-size:16px;transition:transform .25s var(--ease)}
+.btn:hover .ic{transform:translateX(3px)}
+.btn:active{transform:scale(.98)}
+.btn--sm{--h:36px;padding:0 16px;font-size:11px}
+.btn--lg{--h:52px;padding:0 24px}
+.btn--block{width:100%}
+.btn--primary{background:var(--grad);color:#fff}
+.btn--primary:hover{box-shadow:0 6px 18px rgba(62,120,184,.4)}
+.btn--dark{background:var(--ink);color:#fff}
+.btn--dark:hover{background:#000}
+.btn--light{background:#fff;color:var(--ink);box-shadow:var(--shadow-btn)}
+.btn--ghost{background:#fff;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn--ghost:hover{box-shadow:inset 0 0 0 1.5px var(--blue)}
+.btn--soft{background:var(--light);color:var(--blue-text)}
+.btn--soft:hover{background:#d3e6ff}
+.btn--white{background:#fff;color:var(--blue-deep)}
+.btn--glass{background:rgba(255,255,255,.16);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.5)}
+.btn--glass:hover{background:rgba(255,255,255,.26)}
+
+.link{display:inline-flex;align-items:center;gap:8px;font:600 12px/1.2 var(--display);letter-spacing:.04em;text-transform:uppercase;color:var(--blue-text)}
+.link .ic{font-size:15px;transition:transform .25s var(--ease)}
+.link:hover .ic{transform:translateX(3px)}
+.link--btn{cursor:pointer;text-align:left}
+
+/* служебный переключатель вариантов блока (не часть сайта) */
+.sec .wrap,.final .wrap{position:relative}
+
+/* ───────────── секции ───────────── */
+.sec{padding-block:var(--sec)}
+.sec--tint{background:var(--tint)}
+/* соседние блоки на одном фоне: верхний отступ не удваиваем */
+.sec--join{padding-top:0}
+.sec__head{display:grid;gap:10px;justify-items:start;margin-bottom:clamp(20px,3vw,36px)}
+.sec__head h2{font-size:clamp(22px,2.6vw,34px)}
+.sec__sub{font:500 clamp(15px,1.6vw,19px)/1.25 var(--display);color:var(--blue)}
+.lead{font-size:clamp(14px,1.2vw,15px);color:var(--sub);max-width:58ch}
+@media (min-width:1024px){
+  .sec__head{grid-template-columns:minmax(0,1fr) auto;column-gap:var(--gap);align-items:center}
+  .sec__head h2{grid-column:1;grid-row:1}
+  .sec__head .tag{grid-column:2;grid-row:1;justify-self:end}
+  .sec__head>.lead,.sec__head>.sec__sub{grid-column:1/-1}
+}
+
+/* ───────────── служебная полоса, шапка, меню (как на остальных страницах проекта) ───────────── */
+
+.hdr{position:sticky;top:0;z-index:60;height:var(--hdr);background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 8px 0 9px}
+.hdr__logo{display:inline-flex;align-items:center;gap:5px;font:500 10.5px/1 var(--display);text-transform:uppercase;color:var(--ink);white-space:nowrap}
+.hdr__logo img{width:15px;height:15px}
+.hdr__nav{display:none}
+.hdr__right{display:flex;align-items:center;gap:6px}
+.hdr__lk{position:relative;display:inline-flex;align-items:center;height:22px;padding:0 7px;border-radius:5px;background:var(--ink);color:#fff;font:600 9.4px/1 var(--display);white-space:nowrap}
+.burger{position:relative;width:30px;height:22px;border-radius:5px;background:#f5f4f4}
+.hdr__lk::after,.burger::after{content:"";position:absolute;inset:-9px -3px}
+.burger span{position:absolute;left:8px;right:8px;height:1.5px;border-radius:2px;background:var(--ink)}
+.burger span:first-child{top:8px}.burger span:last-child{top:12px}
+@media (max-width:359px){.hdr__lk{display:none}}
+@media (min-width:1024px){
+  .hdr{background:#f5f4f4;padding:0}
+  .hdr__logo{position:absolute;left:0;top:0;height:43px;padding:0 16px 0 12px;background:#fff;border-radius:0 0 6px 0;font-size:10px}
+  .hdr__nav{display:flex;position:absolute;left:50%;top:10px;transform:translateX(-50%);height:34px;padding:0 14px;align-items:center;background:#fff;border-radius:0 0 6px 6px}
+  .hdr__nav a{font:500 10px/1 var(--display);letter-spacing:0;text-transform:uppercase;padding:7px 10px;border-radius:30px;color:var(--ink);white-space:nowrap;transition:background .2s}
+  .hdr__nav a:hover{background:var(--tint)}
+  .hdr__nav a.is-hot{color:var(--pink)}
+  .hdr__right{position:absolute;right:0;top:0;height:43px;padding:0 10px 0 12px;background:#fff;border-radius:0 0 0 6px}
+  .hdr__lk{height:24px;padding:0 12px;border-radius:4px;font-size:10px}
+  .burger{display:none}
+}
+
+/* выезжающее меню слева, как на других страницах */
+.menu{position:fixed;inset:0;z-index:80}
+.menu[hidden]{display:none}
+.menu__bg{position:absolute;inset:0;background:rgba(255,255,255,.6);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);opacity:0;transition:opacity .3s ease-in-out}
+.menu__panel{position:absolute;left:0;top:0;bottom:0;z-index:1;width:260px;max-width:86vw;background:#111;color:#fff;display:flex;flex-direction:column;padding:56px 40px 28px 0;transform:translateX(-100%);transition:transform .3s ease-in-out;overflow:auto}
+.menu.is-open .menu__panel{transform:none}
+.menu.is-open .menu__bg{opacity:1}
+.menu__x{position:absolute;top:12px;right:14px;width:32px;height:32px;display:grid;place-items:center;color:#fff;font-size:22px}
+.menu__nav{display:grid;justify-items:end}
+.menu__nav a{font:500 20px/45px var(--display);color:#fff;text-align:right}
+.menu__foot{margin-top:auto;display:grid;justify-items:end;gap:10px;padding-top:24px}
+.menu__soc{display:flex;gap:8px;margin-bottom:6px}
+.menu__soc img{width:32px;height:32px;border-radius:50%}
+.menu__btn{display:inline-flex;align-items:center;justify-content:center;min-width:129px;height:45px;padding:0 18px;border-radius:var(--r-md);font:600 12px/1 var(--display);letter-spacing:.04em;text-transform:uppercase}
+.menu__btn--blue{background:var(--grad);color:#fff}
+.menu__btn--white{background:#fff;color:var(--blue-deep)}
+body.is-locked{overflow:hidden}
+
+/* ───────────── 1. первый экран ───────────── */
+.hero{padding-top:10px;padding-bottom:var(--sec);--s1:8px;--s2:16px;--s3:24px;--s4:40px;--s5:56px}
+.hero__bg{position:relative;isolation:isolate;overflow:hidden;color:#fff;margin-inline:20px;border-radius:var(--r-xl);
+  background:
+   linear-gradient(180deg,rgba(40,54,88,.6),rgba(40,54,88,.36)),
+   url(img/t/t65633034-group_1321319637.webp) center/cover,#6f819f}
+.hero__in{position:relative;display:grid;gap:0;padding:40px 14px 40px;text-align:center}
+/* мобильная версия: фон главного экрана от края до края */
+@media (max-width:767px){
+  .hero{padding-top:0}
+  .hero__bg{margin-inline:0;border-radius:0}
+  .hero__in{padding-inline:20px}
+}
+.hero__head{display:grid;gap:0;justify-items:center;margin-bottom:var(--s5)}
+.hero__title{display:grid;gap:var(--s1);justify-items:center;width:100%}
+.hero__eyebrow{font:600 16px/1.2 var(--display);letter-spacing:.02em}
+.hero__mark{width:100%;max-width:400px;height:auto}
+.hero__lead{font:600 22px/1.2 var(--display);margin-top:var(--s2)}
+.hero__tags{display:flex;flex-wrap:wrap;justify-content:center;font-size:14px;line-height:1.5;white-space:nowrap;margin-top:var(--s1)}
+.hero__tags li{position:relative;padding:0 7px}
+.hero__tags li+li::before{content:"";position:absolute;left:0;top:15%;height:70%;width:1px;background:rgba(255,255,255,.7)}
+@media (max-width:413px){.hero__tags{display:grid;grid-template-columns:auto auto;justify-content:center;gap:6px 0}.hero__tags li{padding:0 14px}.hero__tags li:nth-child(odd)::before{display:none}}
+@media (max-width:359px){.hero__tags{gap:2px 0}.hero__tags li+li::before{display:none}.hero__tags li{padding:0 8px}}
+
+.hero__flow{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px;padding:10px 12px 10px 18px;border-radius:var(--r-lg);background:rgba(255,255,255,.2);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:#fff;text-align:left;transition:background .25s}
+.hero__flow:hover{background:rgba(255,255,255,.3)}
+.hero__flowt{display:grid;gap:1px}
+.hero__flowt b{font:600 15px/1.25 var(--display)}
+.hero__flowt u{font-size:13px;line-height:1.25;opacity:.85;text-underline-offset:2px}
+.hero__flow .go{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--ink);color:#fff;flex:none;font-size:14px}
+
+/* кнопки под плашкой с датой: сначала бот, затем бесплатные тренировки */
+.hero__acts{display:grid;grid-template-columns:1fr 1fr;gap:var(--s2);margin-top:var(--s2)}
+.cta{display:grid;gap:var(--s1);justify-items:center;align-content:start}
+.cta__btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:56px;padding:6px 12px;border-radius:var(--r-md);font:600 12px/1.15 var(--display);letter-spacing:.05em;text-transform:uppercase;text-align:center;transition:transform .25s,background .25s}
+.cta__btn .ic{font-size:15px;flex:none}
+.cta__btn:active{transform:scale(.98)}
+.cta__btn--main{background:var(--grad);color:#fff;box-shadow:0 6px 18px rgba(20,40,90,.35)}
+.cta__btn--ghost{background:rgba(255,255,255,.16);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.7)}
+.cta__btn--ghost:hover{background:rgba(255,255,255,.26)}
+.cta__note{font:500 13px/1.4 var(--font);color:rgba(255,255,255,.94);max-width:26ch}
+.hero__photo{display:none}
+
+@media (min-width:768px){
+  .hero{padding-top:12px}
+  .hero{--s3:24px;--s4:56px;--s5:88px}
+  .hero__in{padding:48px 24px 48px}
+  .hero__head{margin-bottom:var(--s5)}
+  .hero__lead{margin-top:var(--s3)}
+  .hero__mark{max-width:520px}
+  .hero__eyebrow{font-size:15px}
+  .hero__lead{font-size:22px}
+  .hero__tags{font-size:15px}
+  .hero__tags li{padding:0 10px}
+  .hero__acts{gap:var(--gap)}
+  .cta__btn{min-height:56px}
+  .cta__note{font-size:14px}
+  .hero__flow{min-height:56px;padding:8px 12px 8px 20px}
+  .hero__flow .go{width:36px;height:36px}
+  .hero__flowt b{font-size:15px}
+  .hero__flowt u{font-size:13px}
+}
+@media (min-width:1024px){
+  .hero__in{
+    grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);row-gap:0;
+    text-align:left;align-content:center;
+    min-height:clamp(520px,42vw,620px);padding:56px var(--gut)}
+  .hero__head,.hero__acts,.hero__flow{grid-column:1/7}
+  .hero__head{justify-items:start}
+  .hero__title{justify-items:start}
+  .hero__mark{max-width:none}
+  .hero__eyebrow{font-size:16px}
+  .hero__lead{font-size:26px}
+  .hero__tags{justify-content:flex-start;font-size:16px}
+  .hero__tags li:first-child{padding-left:0}
+  .hero__tags li:first-child::before{display:none}
+  .cta{justify-items:start}
+  .cta__note{text-align:left;font-size:14px}
+  /* тренер крупно: кадр обрезан чуть выше колен (≈74% высоты снимка) */
+  .hero__photo{display:block;position:absolute;top:0;bottom:0;right:var(--gut);width:calc((100% - 2 * var(--gut) - var(--gap)) / 2);overflow:hidden}
+  .hero__photo img{position:absolute;top:0;right:0;height:135%;width:auto;max-width:none}
+}
+
+/* ───────────── 2. подход ───────────── */
+.tools{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:calc(var(--gap) + 8px)}
+.tools li{font:600 12px/1 var(--font);padding:9px 13px;border-radius:var(--pill);background:var(--tint);color:var(--ink)}
+.tools li:last-child{background:transparent;color:var(--sub);box-shadow:inset 0 0 0 1px var(--line)}
+.approach{display:grid;gap:30px;grid-template-columns:minmax(0,1fr)}
+.approach__ph{border-radius:var(--r-xl);overflow:hidden;aspect-ratio:16/10;
+  background:radial-gradient(circle at 1px 1px,rgba(79,134,196,.28) 1.2px,transparent 1.6px) 0 0/18px 18px,linear-gradient(180deg,#eef5ff,var(--light))}
+.approach__ph{position:relative}
+.approach__ph img{width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+.approach__ph .sticker{position:absolute;left:14px;bottom:14px;z-index:1;max-width:min(260px,calc(100% - 28px))}
+.approach__ph .sticker b{font-family:var(--font);font-size:15px;font-weight:600;line-height:1.3}
+.roots{display:grid;gap:12px;align-content:start}
+.roots__t{font-size:clamp(17px,1.7vw,20px)}
+.issues{display:grid;gap:8px;align-content:start}
+.issue{display:grid;gap:3px;align-content:start;padding:12px 14px;border-radius:var(--r-lg);background:var(--card)}
+.issue__t{font:600 14px/1.3 var(--display);color:var(--ink)}
+.issue__d{font-size:13px;line-height:1.4;color:var(--sub)}
+.statement{margin-top:var(--gap);max-width:62ch;padding:2px 0 2px 16px;border-left:3px solid var(--blue);color:var(--ink);font:600 clamp(17px,1.8vw,20px)/1.35 var(--display)}
+.statement--light{font-weight:500;font-size:clamp(15px,1.5vw,17px);color:var(--sub);border-left-color:var(--blue-soft)}
+@media (min-width:768px){
+  .approach{grid-template-columns:minmax(0,260px) minmax(0,1fr);grid-template-rows:minmax(236px,auto);column-gap:var(--gap);align-items:stretch}
+  .approach__ph{position:relative;aspect-ratio:auto}
+  .approach__ph img{position:absolute;inset:0;object-fit:cover;object-position:50% 55%}
+  .roots{grid-template-rows:auto 1fr;gap:26px}
+  .issues{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .issue:last-child{grid-column:1/-1}
+}
+@media (min-width:1024px){
+  .approach{grid-template-columns:repeat(12,minmax(0,1fr))}
+  .approach__ph{grid-column:1/5}
+  .roots{grid-column:5/13}
+  .issue{padding:14px 16px}
+  .issue__t{font-size:15px}
+}
+
+/* ───────────── 3. о клубе ───────────── */
+.club{display:grid;gap:24px}
+.club__list{display:grid;border-top:1px solid #dcdcdc}
+.cl{display:grid;grid-template-columns:32px minmax(0,1fr);column-gap:14px;align-items:start;padding:16px 0;border-bottom:1px solid #dcdcdc}
+.cl__n{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--light);color:var(--blue-text);font:600 13px/1 var(--display)}
+.cl__t{display:grid;gap:4px;align-content:start;padding-top:4px}
+.cl h3{font-size:clamp(17px,1.6vw,19px)}
+.cl p{font-size:14px;line-height:1.45;color:var(--sub)}
+.cl__chips{margin-top:8px;gap:8px}
+.cl__chips li{font-size:14px;line-height:1.4;color:var(--sub)}
+.club__more{display:grid;gap:16px;justify-items:start}
+.club__more p{font:500 15px/1.5 var(--font);color:var(--ink);max-width:46ch}
+.club__media{position:relative;isolation:isolate;overflow:hidden;width:min(100%,300px);margin:0 auto;border-radius:var(--r-xl);aspect-ratio:3/4;background:var(--light)}
+.club__vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.club__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:90% 40%}
+.club__stat{position:absolute;left:14px;top:14px;z-index:2;display:grid;gap:3px;padding:10px 14px;border-radius:var(--r-lg);background:rgba(255,255,255,.96);box-shadow:0 8px 24px rgba(30,40,60,.18)}
+.club__stat small{font:600 10px/1.1 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--blue-text)}
+.club__stat b{font:600 19px/1.1 var(--display);color:var(--ink);white-space:nowrap}
+.club__crowd{position:relative;margin:0;width:100%;border-radius:var(--r-xl);overflow:hidden;aspect-ratio:3/2;background:var(--light)}
+.club__crowd img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.club__play{position:absolute;left:50%;top:50%;z-index:2;display:grid;place-items:center;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;background:rgba(255,255,255,.94);color:var(--blue-deep);font-size:22px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.ticks{display:grid;gap:8px;align-content:start}
+.ticks li{position:relative;padding-left:26px;font-size:14px;color:var(--sub);line-height:1.4}
+.ticks li::before{content:"";position:absolute;left:0;top:1px;width:18px;height:18px;border-radius:50%;background:var(--light) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m4 8.4 2.7 2.7L12 5.4' fill='none' stroke='%232278d8' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat}
+.ticks b{color:var(--ink);font-weight:700}
+.club__more .btn{width:100%}
+@media (min-width:768px){
+  .club{grid-template-columns:minmax(0,1fr) 280px;column-gap:var(--gap);row-gap:28px;align-items:start}
+  .club__list{grid-column:1;grid-row:1}
+  .club__media{grid-column:2;grid-row:1/3;width:auto;margin:0}
+  .club__more{grid-column:1;grid-row:2}
+}
+@media (min-width:1024px){
+  .club{grid-template-columns:minmax(0,1fr) 320px minmax(0,1fr);column-gap:var(--gap);row-gap:0;align-items:stretch}
+  .club__list{grid-column:1;grid-row:1}
+  .club__media{grid-column:2;grid-row:1;aspect-ratio:auto;min-height:400px}
+  .club__more{grid-column:3;grid-row:1;gap:20px;align-content:start}
+  .club__stat{left:20px;top:20px}
+  .club__stat b{font-size:22px}
+}
+
+/* прежние плашки «О клубе» (текущая версия) */
+.club0{display:grid;gap:var(--gap)}
+.cx{background:#fff;border-radius:var(--r-lg);padding:16px 18px;display:grid;gap:6px;align-content:start;box-shadow:var(--shadow-card)}
+.cx__n{font:600 12px/1 var(--display);letter-spacing:.1em;color:var(--blue)}
+.cx h3{font-size:clamp(17px,1.7vw,20px)}
+.cx p{color:var(--sub);font-size:14px}
+.cx--stat{background:var(--light);box-shadow:none;display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 14px}
+.cx--stat span{font:600 12px/1.2 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--blue-text)}
+.cx--stat b{font:600 clamp(24px,3vw,32px)/1.1 var(--display);color:var(--blue-deep)}
+.cx--media{position:relative;aspect-ratio:16/10;display:grid;place-content:center;justify-items:center;gap:10px;text-align:center;box-shadow:none;border:1.5px dashed var(--blue-soft);
+  background:radial-gradient(circle at 1px 1px,rgba(79,134,196,.22) 1.2px,transparent 1.6px) 0 0/18px 18px,var(--light)}
+.cx__play{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:#fff;color:var(--blue-deep);font-size:20px;box-shadow:var(--shadow-btn)}
+.cx--media figcaption{display:grid;gap:2px;font:600 13px/1.3 var(--display);color:var(--ink);max-width:24ch;position:static;background:none;padding:0;border-radius:0;-webkit-backdrop-filter:none;backdrop-filter:none}
+.cx--media small{font:500 12px/1.3 var(--font);color:var(--sub)}
+.cx--wide{background:var(--grad);color:#fff;display:flex;flex-direction:column;align-items:flex-start;gap:14px;box-shadow:none;padding:18px}
+.cx--wide p{color:#fff;font:600 clamp(15px,1.6vw,18px)/1.4 var(--display);max-width:60ch}
+@media (min-width:768px){
+  .club0{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--gap);row-gap:8px}
+  .cx--stat{grid-column:1/-1;margin-bottom:calc(var(--gap) - 8px);padding:16px 20px}
+  .cx:not(.cx--wide):not(.cx--stat):not(.cx--media){display:grid;grid-template-rows:subgrid;grid-row:span 3;padding:18px 20px}
+  .cx--media{grid-column:1/2;aspect-ratio:auto;min-height:190px;margin-top:calc(var(--gap) - 8px)}
+  .cx--wide{grid-column:2/-1;margin-top:calc(var(--gap) - 8px);flex-direction:row;align-items:center;justify-content:space-between;gap:24px;padding:20px 24px}
+}
+
+/* ───────────── 4. курсы ───────────── */
+.courses{display:grid;gap:var(--gap)}
+.course,.choose{background:var(--card);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column}
+.course__img{aspect-ratio:16/9;background:#fff;overflow:hidden}
+.course__img img{width:100%;height:100%;object-fit:cover}
+.course__body{padding:18px;display:grid;gap:14px;align-content:start;flex:1}
+.course h3{font-size:clamp(20px,2vw,24px)}
+.course__sub{font:600 14px/1.35 var(--display);color:var(--blue)}
+.course__desc{display:grid;gap:8px}
+.course__desc p{font:500 15px/1.4 var(--display);color:var(--ink)}
+.course__desc:empty{display:none}
+.course__big{font:500 15px/1.35 var(--display)}
+.course__big b{font-weight:600;color:var(--blue);font-size:1.25em;margin-right:2px}
+.week{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.wk{display:grid;gap:6px;justify-items:center;align-content:start}
+.wk span{font:600 10px/1 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.w{display:block;width:100%;height:10px;border-radius:var(--pill)}
+.w--c{background:var(--blue-soft)}
+.w--s{background:var(--ink)}
+.course .btn{margin-top:auto}
+.video{position:relative;display:block;width:100%;aspect-ratio:16/9;overflow:hidden;background:#222}
+.video img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.video:hover img{transform:scale(1.04)}
+.video__play{position:absolute;left:50%;top:50%;width:60px;height:60px;margin:-30px 0 0 -30px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--blue-deep);display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .3s var(--ease)}
+.video__play svg{width:26px;height:26px;margin-left:3px}
+.video:hover .video__play{transform:scale(1.08)}
+.video__time{position:absolute;right:10px;bottom:10px;background:rgba(0,0,0,.65);color:#fff;font:600 11px/1 var(--font);padding:6px 9px;border-radius:var(--pill)}
+.choose__body{padding:18px;display:grid;gap:12px;align-content:start}
+.choose h3{font-size:clamp(17px,1.7vw,20px)}
+.choose p{font-size:14px;line-height:1.35;color:var(--sub)}
+@media (max-width:767px){
+  .course{display:grid;grid-template-columns:88px minmax(0,1fr);column-gap:14px;row-gap:22px;padding:16px}
+  .course__img{grid-column:1;grid-row:1/3;aspect-ratio:1;border-radius:var(--r-md);align-self:center}
+  .course__img img{object-position:62% 40%}
+  .course__body{display:contents}
+  .course__body>h3{grid-column:2;grid-row:1;align-self:end;margin-bottom:-18px}
+  .course__body>.course__sub{grid-column:2;grid-row:2;align-self:start}
+  .course__body>:not(h3):not(.course__sub){grid-column:1/-1}
+  .course__body>.course__big{margin-bottom:-10px}
+  .course__body>.week{margin-bottom:-6px}
+}
+@media (min-width:768px){
+  /* 8 общих строк: фото · заголовок · подзаголовок · описание · главная строка · шкала · список · кнопка */
+  .courses{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--gap);row-gap:14px}
+  .course{display:grid;grid-template-rows:subgrid;grid-row:span 8;padding-bottom:18px}
+  .course__body{display:contents}
+  .course__body>*{margin-inline:18px}
+  .course .btn{margin-top:0;align-self:end;width:auto}
+  .course__desc:empty{display:block}
+  .choose{grid-column:1/-1;flex-direction:row;margin-top:calc(var(--gap) - 14px)}
+  .choose .video{width:50%;aspect-ratio:auto;min-height:240px;flex:none}
+  .choose__body{padding:24px;align-content:center;flex:1}
+}
+@media (min-width:1024px){
+  .courses{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .choose{grid-column:auto;margin-top:0;flex-direction:column;align-self:start}
+  .choose .video{width:100%;aspect-ratio:16/9;min-height:0}
+}
+
+.trial{margin-top:var(--gap);display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding:18px;border-radius:var(--r-lg);background:var(--light)}
+.trial__t{font:600 clamp(16px,1.7vw,19px)/1.3 var(--display);color:var(--ink);max-width:36ch}
+.trial .btn{width:100%}
+@media (min-width:768px){.trial{flex-direction:row;align-items:center;justify-content:space-between;gap:24px;padding:20px 24px}.trial .btn{width:auto;flex:none}}
+
+/* вариант «2 курса»: третья плашка (видео) скрыта */
+
+/* ───────────── 5. занятия ───────────── */
+.lessons{display:grid;gap:24px;align-items:center}
+.phones__stage{position:relative;width:100%;max-width:520px;margin-inline:auto;aspect-ratio:1/1;border-radius:var(--r-xl);overflow:hidden;
+  background:radial-gradient(circle at 1px 1px,rgba(255,255,255,.22) 1.2px,transparent 1.6px) 0 0/18px 18px,var(--grad)}
+.phones__back{position:absolute;left:-6%;bottom:-8%;width:62%;transform:rotate(-7deg);filter:drop-shadow(0 18px 26px rgba(0,30,70,.3))}
+.phones__front{position:absolute;right:-2%;bottom:-6%;width:62%;filter:drop-shadow(0 22px 30px rgba(0,30,70,.35))}
+.phones__chip{position:absolute;z-index:2;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.94);color:var(--ink);font:600 12px/1 var(--font);padding:9px 12px;border-radius:var(--pill);box-shadow:0 8px 20px rgba(0,30,70,.2)}
+.phones__chip .ic{color:var(--pink);font-size:15px}
+.phones__chip b{font:600 14px/1 var(--display);color:var(--blue-deep)}
+.phones__chip--a{left:6%;top:7%}
+.phones__chip--b{right:6%;top:14%}
+.steps{counter-reset:s;display:grid}
+.steps li{counter-increment:s;position:relative;padding:16px 0 16px 50px;border-bottom:1px solid var(--line)}
+.steps li:first-child{border-top:1px solid var(--line)}
+.steps li::before{content:counter(s);position:absolute;left:0;top:14px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font:600 14px/1 var(--display);color:var(--blue-deep);background:#fff;box-shadow:var(--shadow-btn)}
+.steps h3{font-size:16px;margin-bottom:4px}
+.steps p{font-size:14px;color:var(--sub);text-wrap:wrap}
+.stream{margin-top:var(--gap);background:#fff;border-radius:var(--r-lg);padding:20px 16px;display:grid;gap:20px;box-shadow:var(--shadow-card)}
+.stream__txt{display:grid;gap:10px;align-content:start}
+.stream__txt h3{font-size:clamp(18px,1.9vw,22px)}
+.stream__txt p{font-size:14px;color:var(--sub)}
+.stream__txt p b{color:var(--ink)}
+.weeks5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));column-gap:6px;row-gap:8px}
+.wkc{display:grid;gap:4px;justify-items:center;padding:12px 2px;border-radius:var(--r-md);background:var(--light);color:var(--blue-deep)}
+.wkc b{font:600 20px/1 var(--display)}
+.wkc span{font:600 9px/1 var(--display);letter-spacing:.06em;text-transform:uppercase}
+.wkc--bonus{background:var(--grad);color:#fff}
+.weeks5__cap{font:600 10px/1.3 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:8px;border-top:2px solid var(--blue-soft);margin:0}
+.weeks5__cap--main{grid-column:1/5}
+.weeks5__cap--bonus{grid-column:5/6;border-top-color:var(--blue-deep);overflow-wrap:anywhere}
+.stream__access{margin-top:14px;font:600 14px/1.3 var(--display);color:var(--blue-deep)}
+@media (min-width:768px){.stream{padding:24px}}
+@media (min-width:1024px){
+  .lessons{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);align-items:stretch}
+  .phones{grid-column:1/7}
+  .steps{grid-column:7/13;grid-auto-rows:1fr;padding-left:var(--gap)}
+  .steps li{display:grid;align-content:center}
+  .phones__stage{max-width:none;aspect-ratio:3/2}
+  .phones__front{width:45%;bottom:-3%;right:6%}
+  .phones__back{width:50%;left:2%;bottom:-6%}
+  .stream{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);align-items:center;padding:32px}
+  .stream__txt{grid-column:1/6}
+  .stream__vis{grid-column:7/13}
+  .wkc{padding:18px 4px}
+}
+
+/* ───────────── 6. дополнительные материалы (папки) ───────────── */
+.folders{display:grid;border-top:1px solid var(--line)}
+.xr{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:14px;align-items:start;padding:16px 0;border-bottom:1px solid var(--line)}
+.xr__ic{display:grid;place-items:center;width:40px;height:40px;border-radius:var(--r-md);background:var(--light);color:var(--blue-text);font-size:22px}
+.xr__t{display:grid;gap:6px;align-content:start;padding-top:1px}
+.xr h3{font-size:clamp(17px,1.7vw,20px)}
+.xr__d{display:grid;gap:4px;align-content:start}
+.xr__d p{font-size:14px;line-height:1.5;color:var(--sub)}
+@media (min-width:768px){
+  .folders{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,auto);grid-auto-flow:column;column-gap:48px}
+  .xr{padding:20px 0}
+}
+
+/* ───────────── 7. результаты и Наталья ───────────── */
+.rail{position:relative}
+.rail__ctl{display:none}
+.rail__track{display:grid;grid-auto-flow:column;grid-auto-columns:min(76vw,290px);grid-template-rows:repeat(5,auto);column-gap:var(--gap);row-gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--gut);margin-inline:calc(var(--gut)*-1);padding:2px var(--gut) 14px;scrollbar-width:none;overscroll-behavior-x:contain}
+.rail__track::-webkit-scrollbar{display:none}
+.story{scroll-snap-align:start;background:#fff;border-radius:var(--r-lg);overflow:hidden;display:grid;grid-template-rows:subgrid;grid-row:span 5;padding-bottom:16px;box-shadow:var(--shadow-card)}
+.story>img{width:100%;aspect-ratio:1/1;object-fit:cover;background:var(--tint)}
+.story__body{display:contents}
+.story__body>*{margin-inline:16px}
+.story__ask{font:600 10px/1.4 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--blue-text)}
+.story blockquote{font:500 14px/1.45 var(--font);color:var(--ink)}
+.story__name{font:600 13px/1.2 var(--display);color:var(--sub);align-self:end}
+.story--more{background:var(--grad);color:#fff;display:flex;flex-direction:column;justify-content:center;padding:22px}
+.story--more .story__body{display:grid;gap:12px;align-content:center}
+.story--more .story__body>*{margin-inline:0}
+.story--more p{color:rgba(255,255,255,.9);font-size:14px}
+.story__more-t{font:600 20px/1.15 var(--display)!important;color:#fff!important}
+@media (min-width:768px){
+  .rail__track{margin-inline:0;padding-inline:0;scroll-padding-inline:0;grid-auto-columns:calc((100% - 2*var(--gap))/3)}
+  .rail__ctl{display:flex;gap:8px;justify-content:flex-end;margin-top:4px}
+  .round{width:44px;height:44px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:var(--shadow-btn);font-size:17px;transition:background .2s,color .2s}
+  .round:hover{background:var(--ink);color:#fff}
+}
+@media (min-width:1024px){.rail__track{grid-auto-columns:calc((100% - 3*var(--gap))/4)}}
+
+.trainer{margin-top:clamp(32px,5vw,64px);display:grid;gap:var(--gap);align-items:stretch;background:#fff;border-radius:var(--r-lg);padding:10px;box-shadow:var(--shadow-card)}
+.trainer__photo{border-radius:var(--r-md);overflow:hidden;aspect-ratio:16/11;background:var(--tint)}
+.trainer__photo img{width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+.trainer__body{display:grid;gap:14px;justify-items:start;align-content:center;padding:8px 10px 14px}
+.trainer__h{font-size:clamp(24px,2.8vw,34px)}
+.trainer__role{font:500 15px/1.2 var(--display);color:var(--blue);margin-top:-6px}
+.trainer__big{font:600 clamp(16px,1.7vw,20px)/1.3 var(--display);color:var(--ink)}
+.trainer__lead{color:var(--sub);font-size:14px;line-height:1.55;max-width:62ch}
+.trainer__facts{display:flex;flex-wrap:wrap;gap:8px;width:100%}
+.trainer__facts li{background:var(--tint);border-radius:var(--r-md);padding:12px 16px;font-size:12px;line-height:1.3;color:var(--sub)}
+.trainer__facts b{display:block;font:600 15px/1.15 var(--display);color:var(--ink);margin-bottom:4px}
+.certs{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.certs a:not(.certs__more){width:84px;height:62px;border-radius:var(--r-sm);overflow:hidden;box-shadow:inset 0 0 0 1px var(--line),var(--shadow-btn);background:#fff;transition:transform .25s var(--ease)}
+.certs a:not(.certs__more):hover{transform:translateY(-3px)}
+.certs img{width:100%;height:100%;object-fit:cover}
+.certs__more{display:inline-flex;align-items:center;gap:6px;font:600 11px/1.2 var(--display);letter-spacing:.04em;text-transform:uppercase;color:var(--blue-text);margin-left:6px}
+@media (min-width:768px){
+  .trainer{padding:12px}
+}
+@media (min-width:1024px){
+  .trainer__btn{width:auto}
+  .trainer{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap)}
+  .trainer__photo{grid-column:1/6;aspect-ratio:auto;min-height:560px}
+  .trainer__body{grid-column:6/13;padding:24px 24px 24px 12px}
+}
+
+/* ───────────── 8. варианты участия ───────────── */
+.opts{display:grid;gap:var(--gap)}
+.opt{background:var(--card);border-radius:var(--r-lg);padding:20px;display:grid;gap:10px;align-content:start;justify-items:start}
+.opt h3{font-size:clamp(18px,1.9vw,22px)}
+.opt__d{display:grid;gap:10px;align-content:start}
+.opt p{font-size:14px;color:var(--sub)}
+.opt--blue{background:var(--grad);color:#fff}
+.opt--blue p{color:rgba(255,255,255,.92)}
+.streams{margin-top:clamp(28px,4vw,48px);display:grid;gap:14px}
+.streams__t{font-size:clamp(18px,2vw,24px)}
+.streams__list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.sx{background:#fff;border-radius:var(--r-lg);padding:12px 14px;display:flex;flex-direction:column;align-items:flex-start;gap:4px;box-shadow:inset 0 0 0 1px var(--line)}
+.sx b{font:600 18px/1.1 var(--display)}
+.sx span{font:600 14px/1.2 var(--display);color:var(--blue-deep)}
+.streams__note{color:var(--sub);font-size:14px;max-width:64ch}
+@media (min-width:768px){
+  .opts{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--gap);row-gap:10px}
+  .opt{display:grid;grid-template-rows:subgrid;grid-row:span 2;padding:24px}
+  .streams__list{gap:var(--gap)}
+  .sx{flex-direction:row;align-items:baseline;justify-content:space-between;gap:12px;padding:14px 18px}
+}
+
+/* ───────────── 9. fitbonus ───────────── */
+.sec--flush{padding-block:0}
+.bonus{background:var(--lime);color:var(--lime-text);border-radius:var(--r-xl);padding:24px 16px;display:grid;gap:16px}
+.bonus__head{display:grid;gap:10px;justify-items:start;align-content:start}
+.bonus h2{font-size:clamp(26px,3.4vw,40px);color:#1f3402}
+.bonus__lead{font-size:14px;max-width:48ch}
+.tag--lime{background:rgba(53,84,4,.12);color:var(--lime-text)}
+.bonus__stats{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+.bstat{background:rgba(255,255,255,.55);border-radius:var(--r-lg);padding:16px;display:grid;gap:8px;align-content:start;border:1.5px dashed rgba(53,84,4,.35)}
+.bstat span{font:600 11px/1.3 var(--display);letter-spacing:.08em;text-transform:uppercase}
+.bstat b{font:600 clamp(24px,3vw,36px)/1 var(--display);color:#1f3402}
+.bonus__t{font-size:clamp(17px,1.8vw,22px);color:#1f3402}
+.bonus__opts{display:grid;gap:var(--gap)}
+.bo{background:#fff;border-radius:var(--r-lg);padding:16px;display:grid;gap:8px;align-content:start}
+.bo__n{font:600 12px/1 var(--display);letter-spacing:.1em;color:var(--lime-text)}
+.bo p{font:600 15px/1.35 var(--display);color:var(--ink)}
+.bonus__btn{justify-self:start}
+@media (min-width:768px){
+  .bonus{padding:36px 32px}
+  .bonus__opts{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (min-width:1024px){
+  .bonus{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);row-gap:24px;padding:40px}
+  .bonus__head{grid-column:1/7}
+  .bonus__stats{grid-column:7/13;align-self:stretch}
+  .bonus__t,.bonus__opts,.bonus__btn{grid-column:1/-1}
+}
+
+/* ───────────── 10. вопросы (аккордеон) ───────────── */
+.faq{display:grid;gap:28px}
+.faq__col{display:grid;gap:10px;align-content:start}
+.faq__g{font-size:clamp(18px,1.9vw,22px);margin-bottom:4px}
+.qa{background:var(--card);border-radius:var(--r-lg);overflow:hidden}
+.qa summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 18px;cursor:pointer;list-style:none;font:600 15px/1.3 var(--display);color:var(--ink);-webkit-tap-highlight-color:transparent}
+.qa summary::-webkit-details-marker{display:none}
+.qa__ic{position:relative;flex:none;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 1.5px #c9c9cc;transition:background .25s,box-shadow .25s}
+.qa__ic::before,.qa__ic::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:1.6px;border-radius:2px;background:var(--ink);transform:translate(-50%,-50%);transition:transform .25s var(--ease),background .25s}
+.qa__ic::after{transform:translate(-50%,-50%) rotate(90deg)}
+.qa[open] .qa__ic{background:var(--blue);box-shadow:none}
+.qa[open] .qa__ic::before,.qa[open] .qa__ic::after{background:#fff}
+.qa[open] .qa__ic::after{transform:translate(-50%,-50%) rotate(0)}
+.qa summary:hover .qa__ic{box-shadow:inset 0 0 0 1.5px var(--blue-soft)}
+.qa__a{display:grid;gap:10px;justify-items:start;padding:0 18px 18px}
+.qa__a p{font-size:14px;line-height:1.55;color:var(--ink);max-width:60ch}
+.kit{display:flex}
+.kit img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:3px solid var(--card);margin-left:-12px;background:#fff;box-shadow:0 0 0 1px var(--line)}
+.kit img:first-child{margin-left:0}
+.help{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;margin-top:20px}
+.help h3{font:500 14px/1.3 var(--font);letter-spacing:0;color:var(--sub);text-wrap:wrap}
+@media (min-width:1024px){
+  .faq{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--gap)}
+}
+
+/* ───────────── 11. присоединиться ───────────── */
+.final{padding-block:0 var(--sec)}
+.final__card{position:relative;isolation:isolate;overflow:hidden;border-radius:var(--r-xl);padding:28px 16px;display:grid;gap:20px;color:#fff;
+  background:radial-gradient(60% 80% at 100% 0%,rgba(255,255,255,.2),transparent 60%),radial-gradient(circle at 1px 1px,rgba(255,255,255,.16) 1.2px,transparent 1.6px) 0 0/20px 20px,var(--grad)}
+.final h2{font-size:clamp(26px,3.6vw,44px);line-height:1.12;text-align:center;justify-self:center}
+.jn h3{text-wrap:wrap}
+.join{display:grid;gap:var(--gap)}
+.jn{background:rgba(255,255,255,.14);box-shadow:inset 0 0 0 1px rgba(255,255,255,.3);border-radius:var(--r-lg);padding:18px;display:grid;gap:8px;align-content:start}
+.jn h3{font-size:clamp(16px,1.6vw,19px);color:#fff}
+.jn p{font-size:14px;color:rgba(255,255,255,.92)}
+.jn .btn{margin-top:8px}
+@media (min-width:768px){
+  .final h2{white-space:nowrap}
+  .final__card{padding:40px 32px}
+  .join{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--gap);row-gap:8px}
+  .jn{display:grid;grid-template-rows:subgrid;grid-row:span 3}
+  .jn .btn{align-self:end;margin-top:0}
+}
+@media (min-width:1024px){.final__card{padding:48px 40px}}
+
+/* ───────────── подвал ───────────── */
+.foot{background:#262626;color:rgba(255,255,255,.72);padding:40px 0 calc(28px + env(safe-area-inset-bottom));font-size:13px}
+.foot__mark{width:100%;opacity:.14;margin-bottom:32px}
+.foot__cols{display:grid;gap:28px}
+.foot h4{font:600 11px/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:14px}
+.foot nav{display:grid;gap:10px;align-content:start}
+.foot nav h4{margin-bottom:4px}
+.foot a{transition:color .2s}
+.foot a:hover{color:#fff}
+.foot p{line-height:1.5;margin-bottom:10px}
+.soc{display:flex;gap:8px;margin-top:14px}
+.soc a{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.14);display:grid;place-items:center;transition:background .2s}
+.soc a:hover{background:rgba(255,255,255,.28)}
+.soc__vk{font:700 12px/1 var(--display);letter-spacing:.02em;color:#fff}
+.foot__legal{margin:28px 0 0;font-size:11px;color:rgba(255,255,255,.5)}
+@media (max-width:767px){.foot{padding-bottom:calc(88px + env(safe-area-inset-bottom))}}
+@media (min-width:768px){.foot__cols{grid-template-columns:3fr 5fr 4fr;gap:var(--gap)}}
+
+/* ───────────── нижняя панель (мобильная) ───────────── */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;gap:8px;padding:10px var(--gut) calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.94);-webkit-backdrop-filter:saturate(1.4) blur(14px);backdrop-filter:saturate(1.4) blur(14px);border-top:1px solid rgba(0,0,0,.06);transform:translateY(110%);transition:transform .4s var(--ease)}
+.dock.is-on{transform:none}
+.dock .btn{--h:44px;padding:0 14px;flex:1;font-size:11px}
+.dock .btn--primary{flex:1.5}
+@media (min-width:768px){.dock{display:none}}
+
+/* ───────────── модальные окна ───────────── */
+.modal{border:0;padding:24px 20px 20px;border-radius:var(--r-xl);width:min(480px,calc(100vw - 24px));max-height:calc(100dvh - 24px);color:var(--ink);box-shadow:0 24px 70px rgba(20,30,50,.35)}
+.modal::backdrop{background:rgba(24,32,48,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.modal[open]{animation:pop .35s var(--ease)}
+@keyframes pop{from{transform:translateY(14px) scale(.97)}}
+.modal h3{font-size:20px;margin:0 36px 16px 0}
+.modal form{position:absolute;top:10px;right:10px;z-index:2}
+.modal__x{width:36px;height:36px;border-radius:50%;background:var(--tint);display:grid;place-items:center;font-size:15px}
+.modal .btn{margin-top:16px}
+.modal--video{width:min(960px,calc(100vw - 24px));padding:0;background:#000;overflow:hidden}
+.modal--video .modal__x{background:rgba(255,255,255,.9)}
+.modal__frame{aspect-ratio:16/9;width:100%}
+.modal__frame iframe{width:100%;height:100%;border:0;display:block}
+.timeline{position:relative;display:grid;gap:8px}
+.timeline::before{content:"";position:absolute;left:21px;top:28px;bottom:28px;width:2px;background:var(--line)}
+.timeline li{position:relative;display:grid;gap:4px;background:var(--tint);border-radius:var(--r-md);padding:12px 14px 12px 44px;font-size:13px;color:var(--sub);line-height:1.4}
+.timeline li::before{content:"";position:absolute;left:16px;top:16px;width:12px;height:12px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 2px #c9c9cc}
+.timeline li.is-main{background:var(--light);box-shadow:inset 0 0 0 1.5px var(--blue-soft)}
+.timeline li.is-main::before{background:var(--blue);box-shadow:none}
+.timeline__k{font:600 10px/1.2 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.timeline li.is-main .timeline__k{color:var(--blue-text)}
+.timeline__d{font:600 15px/1.2 var(--display);color:var(--ink)}
+
+/* ───────────── «новый подход»: общие элементы ───────────── */
+.sticker{display:grid;gap:3px;padding:10px 14px;border-radius:var(--r-lg);background:rgba(255,255,255,.96);box-shadow:0 8px 24px rgba(30,40,60,.18);text-align:left}
+.sticker small{font:600 10px/1.1 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--blue-text)}
+.sticker b{font:600 16px/1.25 var(--display);color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips li{font:600 12px/1.3 var(--font);color:var(--ink);background:var(--tint);padding:7px 12px;border-radius:var(--pill)}
+.chips li.chip--ghost{background:transparent;color:var(--sub);box-shadow:inset 0 0 0 1px var(--line)}
+.chips--lg li{font-size:13px;padding:9px 14px;background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+.chips--lg b{font:600 14px/1 var(--display);margin-right:4px}
+.sec--tint .chips li{background:#fff}
+.hl{display:grid;border-top:1px solid var(--line)}
+.hl li{display:grid;gap:3px;align-content:start;padding:14px 0;border-bottom:1px solid var(--line)}
+.hl b{font:600 15px/1.3 var(--display);color:var(--ink)}
+.hl span{font-size:14px;line-height:1.4;color:var(--sub)}
+.sec--tint .hl,.sec--tint .hl li{border-color:#dcdcdc}
+.hl li.hl__hot{background:var(--light);border-bottom-color:transparent;border-radius:var(--r-md);padding:13px 14px;margin-top:6px}
+
+/* подход */
+.ap2{display:grid;gap:24px}
+.ap2__ph{position:relative;margin:0;border-radius:var(--r-xl);overflow:hidden;aspect-ratio:16/10;
+  background:radial-gradient(circle at 1px 1px,rgba(79,134,196,.28) 1.2px,transparent 1.6px) 0 0/18px 18px,linear-gradient(180deg,#eef5ff,var(--light))}
+.ap2__ph img{width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+.ap2__ph .sticker{position:absolute;left:14px;bottom:14px;max-width:min(260px,calc(100% - 28px))}
+.ap2__ph .sticker b{font-size:15px}
+.ap2__body{display:grid;gap:18px;align-content:start}
+.ap2__body h3{font-size:clamp(18px,1.9vw,22px)}
+@media (min-width:1024px){
+  .ap2{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);align-items:stretch}
+  .ap2__ph{grid-column:1/6;aspect-ratio:auto;min-height:440px}
+  .ap2__body{grid-column:6/13;align-content:center;padding-left:var(--gap)}
+}
+
+/* курсы */
+.cs2{display:grid;gap:var(--gap)}
+.cc{display:grid;gap:14px;align-content:start;padding:20px;border-radius:var(--r-lg);background:var(--card)}
+.cc__top{display:grid;grid-template-columns:72px minmax(0,1fr);gap:14px;align-items:center}
+.cc__top img{width:72px;height:72px;border-radius:var(--r-md);object-fit:cover;object-position:62% 40%}
+.cc__top>div{display:grid;gap:4px}
+.cc h3{font-size:clamp(20px,2vw,24px)}
+.cc__rec{font:500 15px/1.5 var(--font);color:var(--ink)}
+.cc__big{display:flex;align-items:center;padding:12px 16px;border-radius:var(--r-md);background:var(--light);font:600 14px/1.4 var(--font);color:var(--blue-deep)}
+.cc__big b{font-weight:700}
+.cc .link{justify-self:start;align-self:end;padding-top:14px;width:100%;border-top:1px solid var(--line)}
+.cs2__help{display:grid;gap:var(--gap);padding:12px;border-radius:var(--r-lg);background:var(--card)}
+.cs2__video{position:relative;isolation:isolate;display:block;width:100%;overflow:hidden;border-radius:var(--r-md);aspect-ratio:16/9;background:#222}
+.cs2__video img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.cs2__video:hover img{transform:scale(1.04)}
+.cs2__video .video__play{z-index:2}
+.cs2__helpt{display:grid;gap:10px;justify-items:start;align-content:center;padding:8px 10px 12px}
+.cs2__helpt h3{font-size:clamp(20px,2vw,24px)}
+.cs2__helpt p{font-size:15px;line-height:1.5;color:var(--sub)}
+.cs2__helpt .btn{margin-top:6px;width:100%}
+@media (min-width:768px){
+  .cs2{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(5,auto);row-gap:0}
+  .cc{grid-row:span 5;grid-template-rows:subgrid;row-gap:14px}
+  .cs2__help{grid-column:1/-1;margin-top:var(--gap);grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);align-items:center}
+  .cs2__video{grid-column:1/6}
+  .cs2__helpt{grid-column:6/13;padding:12px 24px}
+  .cs2__helpt .btn{width:auto}
+}
+@media (min-width:1024px){
+  .cs2{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .cs2__help{grid-column:auto;grid-row:span 5;margin-top:0;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr;align-items:stretch}
+  .cs2__video{grid-column:auto}
+  .cs2__helpt{grid-column:auto;display:flex;flex-direction:column;align-items:stretch;gap:10px;padding:8px 10px 10px}
+  .cs2__helpt .btn{width:100%;margin-top:auto}
+}
+
+/* занятия */
+.ls2{display:grid;gap:24px;align-items:center}
+.ls2__body{display:grid;gap:24px}
+.ls2__stream{display:grid;gap:12px;padding-top:20px;border-top:1px solid #dcdcdc}
+.ls2__stream h3{font-size:clamp(18px,1.9vw,22px)}
+.ls2__stream p{font-size:14px;color:var(--sub)}
+.ls2__stream p b{color:var(--ink)}
+.ls2__weeks{display:flex;gap:6px}
+.ls2__weeks i{flex:1;display:grid;place-items:center;height:36px;border-radius:var(--r-md);background:var(--light);color:var(--blue-deep);font:600 14px/1 var(--display);font-style:normal}
+.ls2__weeks i.b{flex:1.6;background:var(--grad);color:#fff;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.ls2 .steps{grid-column:auto;grid-auto-rows:auto;padding-left:0}
+@media (min-width:1024px){
+  .ls2{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap)}
+  .ls2 .phones{grid-column:1/7}
+  .ls2__body{grid-column:7/13;padding-left:var(--gap)}
+  .ls2 .steps li{display:block}
+}
+
+/* материалы */
+.ex2{display:grid;gap:var(--gap)}
+.ex2__main{position:relative;border-radius:var(--r-xl);padding:22px;color:#fff;display:grid;gap:8px;align-content:end;min-height:230px;
+  background:radial-gradient(circle at 1px 1px,rgba(255,255,255,.2) 1.2px,transparent 1.6px) 0 0/18px 18px,var(--grad)}
+.ex2__big{display:block;margin-bottom:6px;font:600 clamp(52px,7vw,84px)/1 var(--display);letter-spacing:-.02em}
+.ex2__main h3{color:#fff;font-size:clamp(18px,1.9vw,22px)}
+.ex2__main p{color:rgba(255,255,255,.92);font-size:14px;max-width:38ch}
+.ex2 .hl li{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:14px;align-items:start;padding:15px 0}
+.ex2 .hl li>div{display:grid;gap:3px}
+@media (min-width:1024px){
+  .ex2{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);align-items:stretch}
+  .ex2__main{grid-column:1/6;min-height:340px}
+  .ex2 .hl{grid-column:6/13;align-content:center;margin-left:var(--gap)}
+}
+
+/* о Наталье */
+.tr2{display:grid;gap:var(--gap);padding:10px;background:#fff;border-radius:var(--r-lg);box-shadow:var(--shadow-card)}
+.tr2__ph{position:relative;margin:0;border-radius:var(--r-md);overflow:hidden;aspect-ratio:1/1;background:var(--tint)}
+.tr2__ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+.tr2__ph .sticker{position:absolute;left:14px;bottom:14px;width:max-content;max-width:calc(100% - 28px)}
+.tr2__body{display:grid;gap:14px;justify-items:start;align-content:center;padding:8px 10px 14px}
+.tr2__body p{justify-self:stretch;max-width:none;text-wrap:wrap}
+.tr2__btn{width:100%}
+@media (min-width:768px){
+  .tr2__btn{width:auto}
+  .tr2__ph{aspect-ratio:4/3}
+  .tr2__ph .sticker{top:14px;bottom:auto}
+}
+@media (min-width:1024px){
+  .tr2{padding:12px;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);align-items:stretch}
+  .tr2__ph{grid-column:1/6;aspect-ratio:auto;min-height:0}
+  .tr2__body{grid-column:6/13;padding:28px 28px 28px 12px}
+}
+
+/* участие */
+.op2{display:grid;gap:var(--gap)}
+.op2__opts{display:grid;gap:var(--gap)}
+.op2__opt{display:grid;gap:6px;align-content:center;padding:20px 22px;border-radius:var(--r-lg);background:var(--tint)}
+.op2__opt h3{font-size:clamp(17px,1.6vw,19px)}
+.op2__opt p{font-size:14px;line-height:1.5;color:var(--sub)}
+.op2__opt--hot{background:var(--light)}
+.op2__streams{display:grid;gap:16px;align-content:space-between;padding:22px;border-radius:var(--r-lg);background:var(--tint)}
+.op2__streams h3{font-size:clamp(17px,1.6vw,19px)}
+.op2__streams .streams__note{max-width:none}
+.op2__tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.op2__tiles li{display:grid;gap:4px;justify-items:center;text-align:center;padding:16px 8px;border-radius:var(--r-md);background:#fff;box-shadow:var(--shadow-card)}
+.op2__tiles b{font:600 clamp(15px,1.6vw,18px)/1.2 var(--display);color:var(--ink)}
+.op2__tiles span{font-size:13px;color:var(--sub)}
+@media (min-width:768px){
+  .op2{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--gap);align-items:stretch}
+  .op2__opts{grid-template-rows:1fr 1fr}
+}
+
+/* вопросы */
+.faq3{display:grid;gap:10px}
+.fq__list{display:grid;gap:10px;align-content:start}
+@media (min-width:768px){
+  .faq3{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--gap);align-items:start}
+}
+
+/* финал */
+.fn2{display:grid;gap:20px;justify-items:center;text-align:center}
+.fn2__date{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 16px;color:rgba(255,255,255,.95);font:500 15px/1.4 var(--font)}
+.fn2__date b{font:600 17px/1.3 var(--display);color:#fff}
+.fn2__sched{display:inline-flex;align-items:center;gap:6px;font:600 12px/1.2 var(--display);letter-spacing:.05em;text-transform:uppercase;color:#fff;text-decoration:underline;text-underline-offset:4px}
+.fn2__sched .ic{font-size:14px}
+.fn2__cta{display:grid;gap:20px;width:100%;max-width:760px;margin-top:6px}
+.cta2{display:grid;gap:10px;justify-items:center;align-content:start}
+.cta2 .btn{width:100%}
+.cta2 p{font-size:14px;color:rgba(255,255,255,.92);max-width:32ch}
+@media (min-width:768px){.fn2__cta{grid-template-columns:1fr 1fr;gap:var(--gap)}}
+
+/* ───────────── появление при прокрутке ───────────── */
+.js-rv .rv{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.js-rv .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js-rv .rv{opacity:1;transform:none}
+}
+
+/* ───────────── режим «продажи открыты» ───────────── */
+[data-sales-only="open"]{display:none}
+html[data-sales="open"] [data-sales-only="closed"]{display:none!important}
+html[data-sales="open"] .buy{display:grid}
+html[data-sales="open"] .fn2__date[data-sales-only="open"]{display:flex}
+html[data-sales="open"] .fn2__cta[data-sales-only="open"]{display:grid}
+html[data-sales="open"] .fn2__close[data-sales-only="open"]{display:block}
+html[data-sales="open"] .dock .btn[data-sales-only="open"]{display:inline-flex}
+html[data-sales="open"] .hero__acts{order:1;margin-top:0}
+html[data-sales="open"] .hero__flow{order:2;margin-top:var(--s2)}
+.buy{grid-column:1/-1;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto auto auto;column-gap:var(--s2);row-gap:0;margin-top:34px}
+.buy__card{position:relative;min-width:0;grid-row:span 3;display:grid;grid-template-rows:subgrid;row-gap:6px;justify-items:center;align-content:start;padding:14px 12px 12px;border-radius:var(--r-lg);background:var(--grad);color:#fff;text-align:center;box-shadow:0 6px 18px rgba(20,40,90,.35);transition:transform .25s}
+.buy__card:active{transform:scale(.99)}
+.buy__tags{position:absolute;left:50%;bottom:calc(100% - 4px);transform:translateX(-50%);display:flex;flex-wrap:wrap;gap:6px;justify-content:center;width:max-content;max-width:calc(100% + 28px)}
+.buy__tags i{font:500 10px/1.2 var(--font);font-style:normal;background:rgba(255,255,255,.2);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:#fff;padding:5px 10px;border-radius:var(--pill)}
+.buy__card b{font:600 20px/1.15 var(--display)}
+.buy__card small{font:500 13px/1.35 var(--font);color:rgba(255,255,255,.9);min-width:0;overflow-wrap:anywhere}
+.buy__btn{align-self:end;display:flex;align-items:center;justify-content:center;gap:6px;width:100%;min-height:44px;margin-top:8px;border-radius:var(--r-md);background:#fff;color:var(--blue-deep);font:600 12px/1.15 var(--display);letter-spacing:.05em;text-transform:uppercase}
+.buy__btn .ic{font-size:15px}
+.buy__note{grid-column:1/-1;margin-top:var(--s2);font:500 13px/1.4 var(--font);color:rgba(255,255,255,.94)}
+.fn2__close{font:500 14px/1.4 var(--font);color:rgba(255,255,255,.92)}
+@media (min-width:768px){.buy__card{padding:16px 16px 14px}.buy__card b{font-size:22px}.buy__note{font-size:14px}}
+@media (max-width:767px){.buy__card small{font-size:12px}}
+@media (min-width:768px){.buy{margin-top:20px}}
+@media (min-width:1024px){.buy__card{justify-items:start;text-align:left}.buy__tags{left:12px;transform:none;max-width:calc(100% - 24px);justify-content:flex-start}.buy__note{text-align:left}}
+/* служебный переключатель режима (только для прототипа) */
+.salesw{position:fixed;left:12px;bottom:12px;z-index:70;display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:var(--r-md);background:rgba(255,255,255,.96);box-shadow:0 6px 24px rgba(30,40,60,.18);font:600 10px/1 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.salesw__label{margin:0 2px 0 4px}
+.salesw button{padding:8px 10px;border-radius:var(--r-sm);border:1px dashed #c9c9cc;background:transparent;color:var(--sub);font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer}
+.salesw button:hover{background:var(--tint)}
+.salesw button[aria-pressed="true"]{background:var(--ink);border:1px solid var(--ink);color:#fff}
+@media (max-width:767px){.salesw{left:8px;right:8px;bottom:70px;justify-content:center}}
+html[data-sales="open"] .cc__buy[data-sales-only="open"]{display:inline-flex}
+.cc .cc__buy{width:100%;align-self:end}
+.cs2__helpt .btn{background:var(--light);color:var(--blue-deep);box-shadow:none}
+.cs2__helpt .btn:hover{background:#dcebff;box-shadow:none}
+
+#club .sec__head>.lead{max-width:none}
+
+.club__crowd .club__stat{top:auto;bottom:14px}
+@media (min-width:1024px){.club__crowd .club__stat{bottom:16px}}
+
+/* логотип поверх видео «О клубе»: закрывает пустоту сверху, когда человек внизу кадра */
+.club__media .club__logo{position:absolute;inset:auto;top:34px;left:50%;width:62%;height:auto;transform:translateX(-50%);object-fit:contain;opacity:.78;filter:drop-shadow(0 1px 8px rgba(40,54,88,.28));pointer-events:none;z-index:2}
+
+/* ───────────── страница «Спикеры» ───────────── */
+.spks{display:grid;gap:var(--gap)}
+.spk{display:grid;grid-template-rows:auto 1fr auto;gap:16px;padding:20px;border-radius:var(--r-lg);background:var(--card)}
+.spk__top{display:flex;align-items:center;gap:14px}
+.spk__ph{flex:none;width:72px;height:72px;border-radius:50%;object-fit:cover;background:var(--light)}
+.spk__who{display:grid;gap:2px;min-width:0}
+.spk__who h3{font-size:clamp(17px,1.7vw,19px)}
+.spk__nick{font:500 14px/1.3 var(--font);color:var(--blue-text);overflow-wrap:anywhere}
+.spk__nick:hover{text-decoration:underline;text-underline-offset:3px}
+.spk__about{font:500 14px/1.55 var(--font);color:var(--sub)}
+.spk__btn{justify-self:start}
+@media (max-width:767px){.spk__btn{justify-self:stretch}}
+@media (min-width:768px){.spks{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1024px){.spks{grid-template-columns:repeat(3,minmax(0,1fr))}.spk{padding:24px}.spk__ph{width:80px;height:80px}}
+
+/* тарифы: теги формата и блок «Кому подойдёт» */
+.cc__tags{display:flex;flex-wrap:wrap;gap:6px;align-content:start}
+.cc__tags li{font:500 12px/1.3 var(--font);color:var(--blue-deep);background:var(--light);padding:6px 11px;border-radius:var(--pill)}
+.cc__who{display:grid;gap:10px;align-content:start}
+.cc__who h4{font:600 15px/1.2 var(--display);color:var(--ink)}
+
+/* указатель над карточкой «Коррекция» */
+.cs2{margin-top:56px}
+.cc--first{position:relative}
+.cc__hint{position:absolute;right:20px;bottom:calc(100% + 8px);z-index:2;padding:6px 12px;border-radius:var(--pill);background:var(--grad);color:#fff;font:600 12px/1.3 var(--font);box-shadow:0 4px 12px rgba(62,120,184,.28);white-space:nowrap}
+.cc__hint::after{content:"";position:absolute;right:18px;top:100%;border:6px solid transparent;border-top-color:var(--blue-deep);border-bottom:0}
+
+/* противопоказания: список-маркеры и ссылка внутри текста */
+.qa__bul{display:grid;gap:8px;align-content:start}
+.qa__bul li{position:relative;padding-left:18px;font-size:14px;line-height:1.5;color:var(--ink)}
+.qa__bul li::before{content:"";position:absolute;left:4px;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--blue)}
+.inl{color:var(--blue-text);text-decoration:underline;text-underline-offset:3px}
+.inl:hover{color:var(--blue-deep)}
+.qa{scroll-margin-top:90px}
+
+/* карточки первого экрана: вся карточка — ссылка через заголовок; тег-кнопка «!» поверх */
+.buy__go{color:inherit}
+.buy__go::after{content:"";position:absolute;inset:0;border-radius:inherit;z-index:1}
+.buy__tags{z-index:3}
+.buy__i{display:inline-grid;place-items:center;width:16px;height:16px;margin:0 0 0 4px;border-radius:50%;background:#fff;color:var(--blue-deep);font:700 10px/1 var(--display);vertical-align:middle;cursor:pointer;box-shadow:0 1px 4px rgba(20,40,90,.25)}
+.buy__i:hover{background:var(--light)}
+.buy__tags i{display:inline-flex;align-items:center}
+/* окно противопоказаний */
+.modal__scroll{display:grid;gap:12px;max-height:calc(100dvh - 230px);overflow:auto;padding-right:4px}
+.modal__scroll p{font-size:14px;line-height:1.55;color:var(--ink)}
+.modal .qa__bul{margin:0}
+
+/* когда продажи открыты, в расписании выделяем конец продаж, а не старт */
+html[data-sales="open"] .timeline li.tl-start{background:var(--tint);box-shadow:none}
+html[data-sales="open"] .timeline li.tl-start::before{background:#fff;box-shadow:inset 0 0 0 2px #c9c9cc}
+html[data-sales="open"] .timeline li.tl-start .timeline__k{color:var(--muted)}
+html[data-sales="open"] .timeline li.tl-end{background:var(--light);box-shadow:inset 0 0 0 1.5px var(--blue-soft)}
+html[data-sales="open"] .timeline li.tl-end::before{background:var(--blue);box-shadow:none}
+html[data-sales="open"] .timeline li.tl-end .timeline__k{color:var(--blue-text)}
+
+</style>
+</head>
+<body>
+
+<!-- иконки -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow" viewBox="0 0 16 16"><path d="M3 8h9.2M8.4 3.6 12.8 8l-4.4 4.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-up-right" viewBox="0 0 16 16"><path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M9 6.8v10.4a.8.8 0 0 0 1.2.7l8.4-5.2a.8.8 0 0 0 0-1.4L10.2 6.1A.8.8 0 0 0 9 6.8Z" fill="currentColor"/></symbol>
+  <symbol id="i-close" viewBox="0 0 16 16"><path d="m3.5 3.5 9 9m0-9-9 9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7.2A2.2 2.2 0 0 1 5.2 5h4.1c.6 0 1.1.2 1.5.6l1.1 1.1c.4.4.9.6 1.5.6h5.4A2.2 2.2 0 0 1 21 9.5v8.3a2.2 2.2 0 0 1-2.2 2.2H5.2A2.2 2.2 0 0 1 3 17.8V7.2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 20 20"><path d="M10 16.6S3.3 12.6 3.3 7.9A3.7 3.7 0 0 1 10 6.2a3.7 3.7 0 0 1 6.7 1.7c0 4.7-6.7 8.7-6.7 8.7Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+</svg>
+
+<a class="skip" href="#main">К содержимому</a>
+
+<header class="hdr" id="hdr">
+  <a class="hdr__logo" href="/new/" aria-label="POPOVICHFIT — на главную"><img src="img/t/t38356338-group_1321318777.svg" alt="" width="15" height="15"><span>Popovichfit</span></a>
+  <nav class="hdr__nav" aria-label="Основное меню">
+    <a href="#courses">Курсы</a>
+    <a href="/results">До/после</a>
+    <a href="/media">Статьи</a>
+    <a href="/about">О тренере</a>
+    <a class="is-hot" href="#next">Вопрос/ответ</a>
+    <a class="is-hot" href="https://t.me/PopovichfitCare_Bot" target="_blank" rel="noopener">Тех.поддержка</a>
+  </nav>
+  <div class="hdr__right">
+    <a class="hdr__lk" href="https://lk.popovichfit.ru/" target="_blank" rel="noopener">Личный кабинет</a>
+    <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="sheet"><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- мобильное меню — как на остальных страницах проекта -->
+<div class="menu" id="sheet" hidden>
+  <div class="menu__panel" role="dialog" aria-modal="true" aria-label="Меню">
+    <button class="menu__x" type="button" aria-label="Закрыть меню"><svg class="ic"><use href="#i-close"/></svg></button>
+    <nav class="menu__nav" aria-label="Меню">
+      <a href="/new/">Главная</a>
+      <a href="#courses">Курсы</a>
+      <a href="/results">До/после</a>
+      <a href="/media">Статьи</a>
+      <a href="/about">О тренере</a>
+      <a href="#next">Вопрос-ответ</a>
+    </nav>
+    <div class="menu__foot">
+      <div class="menu__soc">
+        <a href="https://instagram.com/natalyapopovich" target="_blank" rel="noopener" aria-label="Instagram*"><img src="img/t/t35306633-instagram_black_logo.svg" alt="" width="32" height="32"></a>
+        <a href="https://t.me/natalyapopovich87" target="_blank" rel="noopener" aria-label="Telegram"><img src="img/t/t34633361-telegram_logo_icon_1.svg" alt="" width="32" height="32"></a>
+        <a href="https://www.youtube.com/@popovichfit" target="_blank" rel="noopener" aria-label="YouTube"><img src="img/t/t63656531-iconfinder-youtube-4.svg" alt="" width="32" height="32"></a>
+      </div>
+      <a class="menu__btn menu__btn--blue" href="https://t.me/popovichfitcourse_bot" target="_blank" rel="noopener">Предзапись</a>
+      <a class="menu__btn menu__btn--white" href="https://t.me/PopovichfitCare_Bot" target="_blank" rel="noopener">Тех.поддержка</a>
+    </div>
+  </div>
+  <div class="menu__bg" data-close></div>
+</div>
+
+<main id="main">
+
+<!-- 1 — ПЕРВЫЙ ЭКРАН -->
+<section class="hero" id="top">
+  <div class="hero__bg">
+    <div class="wrap hero__in">
+      <div class="hero__head">
+        <h1 class="hero__title">
+          <span class="hero__eyebrow">Онлайн фитнес-клуб</span>
+          <img class="hero__mark" src="img/t/popovichfit-white.svg" alt="POPOVICHFIT" width="1154" height="139">
+        </h1>
+        <p class="hero__lead">Комплексная работа с&nbsp;телом</p>
+        <ul class="hero__tags" aria-label="Направления">
+          <li>Осанка</li><li>Ягодицы</li><li>Тазовое дно</li><li>Плоский живот</li>
+        </ul>
+      </div>
+
+      <button class="hero__flow" type="button" data-open="schedule">
+        <span class="hero__flowt"><b>Старт следующего потока&nbsp;— 9&nbsp;ноября</b><u>Расписание потоков</u></span>
+        <i class="go"><svg class="ic"><use href="#i-up-right"/></svg></i>
+      </button>
+
+      <div class="hero__acts" id="heroActions">
+        <!-- продажи открыты: выбор курса (ссылки на покупку — заглушки, уточнить) -->
+        <div class="buy" data-sales-only="open">
+          <div class="buy__card">
+            <span class="buy__tags"><i>Подходит в беременность <button class="buy__i" type="button" data-open="contra" aria-label="Противопоказания при тренировках в беременность">!</button></i></span>
+            <b><a class="buy__go" href="/course_correction">Коррекция</a></b>
+            <small>Осанка, дыхание, тазовое дно, плоский живот</small>
+            <span class="buy__btn">Купить <svg class="ic"><use href="#i-arrow"/></svg></span>
+          </div>
+          <div class="buy__card">
+            <b><a class="buy__go" href="/course_power">Силовой</a></b>
+            <small>Сила, рельеф, ягодицы + коррекционные упражнения</small>
+            <span class="buy__btn">Купить <svg class="ic"><use href="#i-arrow"/></svg></span>
+          </div>
+          <p class="buy__note">Продажи закрываются 8 ноября в 23:59 МСК</p>
+        </div>
+      </div>
+
+      <picture class="hero__photo">
+        <img src="img/t/t64376362-popovich_fit_2025040.webp" alt="Наталья Попович" width="1050" height="1634" fetchpriority="high">
+      </picture>
+    </div>
+  </div>
+</section>
+
+<!-- 2 — ПОДХОД -->
+<section class="sec sec--join" id="approach">
+  <div class="wrap">
+    <header class="sec__head">
+      <span class="tag">#подход</span>
+      <h2>От стоп до макушки</h2>
+      <p class="lead">Я работаю с телом комплексно, используя разные инструменты</p>
+    </header>    
+
+    <ul class="tools" aria-label="Инструменты">
+      <li>ЛФК</li><li>Пилатес</li><li>Слинги в движении</li><li>Функциональный тренинг</li><li>Силовой тренинг</li><li>Алгоритмы</li><li>и многое другое</li>
+    </ul>
+
+    <div class="approach">
+      <div class="approach__ph">
+        <img src="img/approach-natasha.jpg" alt="Наталья Попович на коврике, рядом инвентарь для тренировок" width="1600" height="1129" loading="lazy">
+        <figcaption class="sticker"><small>Подход</small><b>Каждый поток мы работаем со всем телом</b></figcaption>
+      </div>
+
+      <div class="roots">
+        <h3 class="roots__t">Я работаю глубоко и над&nbsp;первопричиной</h3>
+        <ul class="issues">
+          <li class="issue"><span class="issue__t">Осанка</span><span class="issue__d">сутулость, холка, перекосы</span></li>
+          <li class="issue"><span class="issue__t">Живот</span><span class="issue__d">который никак не уходит, даже если вы худенькая</span></li>
+          <li class="issue"><span class="issue__t">Боли в спине, шее, суставах</span></li>
+          <li class="issue"><span class="issue__t">Отёки тела и лица</span></li>
+          <li class="issue"><span class="issue__t">Проблемы с мышцами тазового дна</span><span class="issue__d">слабость или гипертонус, подтекания, боли во время полового акта, отсутствие оргазмов</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 — О КЛУБЕ -->
+<section class="sec sec--tint" id="club">
+  <div class="wrap">
+    <header class="sec__head">
+      <span class="tag">#о клубе</span>
+      <h2>Это не марафон на месяц</h2>
+      <p class="lead">Это онлайн фитнес-клуб, где есть как основная программа, так и тренировки на все случаи жизни</p>
+    </header>
+
+        <div class="club">
+      <ol class="club__list">
+        <li class="cl">
+          <span class="cl__n">1</span>
+          <div class="cl__t"><h3>Основная программа</h3><p>Есть расписание для регулярных занятий</p></div>
+        </li>
+        <li class="cl">
+          <span class="cl__n">2</span>
+          <div class="cl__t"><h3>Зарядки на утро</h3><p>Короткие тренировки, чтобы начать день</p></div>
+        </li>
+        <li class="cl">
+          <span class="cl__n">3</span>
+          <div class="cl__t">
+            <h3>Комплексы под разные цели</h3>
+            <ul class="cl__chips ticks">
+              <li>восстановиться после перелёта</li>
+              <li>снять отёки</li>
+              <li>избавиться от напряжения после тяжёлого рабочего дня</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+
+      <!-- место под видео или GIF из сторис (Наташа тренируется дома): пока фото из проекта -->
+      <!-- ролик (18 с, 3:4) как анимированная картинка: играет сам на любом телефоне -->
+      <figure class="club__media" aria-label="Видео: Наташа тренируется дома">
+        <img class="club__vid" src="img/club-video.webp" alt="" width="640" height="854" decoding="async">
+        <img class="club__logo" src="img/t/popovichfit-white.svg" alt="" width="1154" height="139">
+      </figure>
+
+      <div class="club__more">
+        <!-- фото участниц: пока из проекта, потом заменим -->
+        <figure class="club__crowd">
+          <img src="img/club-crowd.webp" alt="Участницы и участники клуба на тренировке" width="1600" height="1066" loading="lazy">
+          <span class="club__stat"><small>С 2020 года</small><b>28 тыс.+ участников</b></span>
+        </figure>
+        <p>Вы можете заниматься по основной программе и выбирать дополнительные тренировки по&nbsp;своему состоянию, времени и&nbsp;наличию инвентаря</p>
+        <a class="btn btn--primary" href="/results">Посмотреть результаты участниц <svg class="ic"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 — КУРСЫ -->
+<section class="sec" id="courses">
+  <div class="wrap">
+    <header class="sec__head">
+      <span class="tag">#курсы</span>
+      <h2>Курсов всего два</h2>
+    </header>
+
+    
+
+
+        <div class="cs2">
+        <article class="cc cc--first">
+          <span class="cc__hint">Рекомендую начать с него</span>
+          <div class="cc__top">
+            <img src="img/t/t61616163-rectangle_29106.webp" alt="" width="1380" height="746" loading="lazy" style="object-position:82% 50%">
+            <div><h3>Коррекция</h3><p class="course__sub">Осанка, дыхание, тазовое дно, плоский живот</p></div>
+          </div>
+          <p class="cc__big"><span><b>5</b> коррекционных тренировок в неделю</span></p>
+          <div class="cc__who">
+            <h4>Кому подойдёт</h4>
+            <ul class="ticks">
+              <li>Новичкам и после долгого перерыва</li>
+              <li>Во время беременности и восстановления после родов (<button class="inl" type="button" data-open="contra">противопоказания</button>)</li>
+              <li>Мужчинам</li>
+              <li>Тем, кому не нужны силовые тренировки</li>
+            </ul>
+          </div>
+          <ul class="cc__tags"><li>В среднем по 30 минут</li><li>Дома или в зале</li></ul>
+          <a class="btn btn--primary cc__buy" data-sales-only="open" href="/course_correction">Купить курс «Коррекция» <svg class="ic"><use href="#i-arrow"/></svg></a>
+        </article>
+
+        <article class="cc">
+          <div class="cc__top">
+            <img src="img/t/t64623131-rectangle_29109.webp" alt="" width="1680" height="906" loading="lazy" style="object-position:91% 50%">
+            <div><h3>Силовой</h3><p class="course__sub">Сила, рельеф, ягодицы + коррекционные упражнения</p></div>
+          </div>
+          <p class="cc__big"><span><b>3</b> силовые + <b>2</b> коррекции в неделю</span></p>
+          <div class="cc__who">
+            <h4>Кому подойдёт</h4>
+            <ul class="ticks">
+              <li>Второй шаг после коррекции</li>
+              <li>Укрепить тело и поработать над рельефом</li>
+              <li>Улучшить осанку с помощью силовых и коррекционных упражнений</li>
+            </ul>
+          </div>
+          <ul class="cc__tags"><li>Пн, Ср, Пт — силовые</li><li>Вт и Чт — коррекция</li><li>От 30 до 60 минут</li><li>В зале или дома</li></ul>
+          <a class="btn btn--primary cc__buy" data-sales-only="open" href="/course_power">Купить курс «Силовой» <svg class="ic"><use href="#i-arrow"/></svg></a>
+        </article>
+        <div class="cs2__help">
+          <button class="cs2__video" type="button" data-open="video" aria-label="Смотреть видео: Коррекция и Силовой — какой курс выбрать">
+            <img src="img/t/t33373166-image.webp" alt="" width="567" height="339" loading="lazy">
+            <span class="video__play"><svg><use href="#i-play"/></svg></span>
+          </button>
+          <div class="cs2__helpt">
+            <h3>Как выбрать курс</h3>
+            <p>Объясняю, чем отличаются курсы и с какого начать</p>
+            <button class="btn btn--primary" type="button" data-open="video">Смотреть видео — 7 минут <svg class="ic"><use href="#i-play"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</section>
+
+<!-- 5 — КАК ПРОХОДЯТ ЗАНЯТИЯ -->
+<section class="sec sec--tint" id="lessons">
+  <div class="wrap">
+    <header class="sec__head">
+      <span class="tag">#занятия</span>
+      <h2>Все тренировки в записи&nbsp;— занимаетесь, когда удобно</h2>
+    </header>    
+
+    <div class="lessons">
+      <div class="phones" aria-label="Экраны личного кабинета">
+        <div class="phones__stage">
+          <img class="phones__back" src="img/phone-plain.webp" alt="Экран «Дополнительные материалы» в личном кабинете" width="876" height="908" loading="lazy">
+          <img class="phones__front" src="img/phone-hand.webp" alt="Экран «Тренировки»: недели, дни и карточки тренировок" width="830" height="1160" loading="lazy">
+          <span class="phones__chip phones__chip--a"><svg class="ic"><use href="#i-heart"/></svg>Избранное</span>
+          <span class="phones__chip phones__chip--b"><b>48%</b> прогресс</span>
+        </div>
+      </div>
+
+      <ol class="steps">
+        <li><h3>Формат «следуй за мной»</h3><p>Открываете тренировку в личном кабинете на сайте или в приложении и занимаетесь в формате «следуй за мной»</p></li>
+        <li><h3>Избранное и прогресс</h3><p>Любимые тренировки сохраняйте в избранное, отмечайте пройденные</p></li>
+        <li><h3>Занимайтесь без интернета</h3><p>В приложении тренировки можно скачивать для просмотра без интернета</p></li>
+      </ol>
+    </div>
+
+    <div class="stream">
+      <div class="stream__txt">
+        <h3>Один поток&nbsp;— 5 недель</h3>
+        <p><b>4 недели основной программы + 5-я неделя бонусная</b></p>
+        <p>Новая неделя открывается по воскресеньям, предыдущие тренировки остаются доступны до окончания потока</p>
+      </div>
+      <div class="stream__vis" aria-label="Пять недель потока: четыре основные и одна бонусная">
+        <div class="weeks5">
+          <div class="wkc"><b>1</b><span>неделя</span></div>
+          <div class="wkc"><b>2</b><span>неделя</span></div>
+          <div class="wkc"><b>3</b><span>неделя</span></div>
+          <div class="wkc"><b>4</b><span>неделя</span></div>
+          <div class="wkc wkc--bonus"><b>5</b><span>бонус</span></div>
+          <p class="weeks5__cap weeks5__cap--main">основная программа</p>
+          <p class="weeks5__cap weeks5__cap--bonus">ещё неделя</p>
+        </div>
+        <p class="stream__access">Доступ к одному потоку&nbsp;— 5 недель</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 — ДОПОЛНИТЕЛЬНЫЕ МАТЕРИАЛЫ -->
+<section class="sec" id="extras">
+  <div class="wrap">
+    <header class="sec__head">
+      <span class="tag">#материалы</span>
+      <h2>Что ещё есть в клубе</h2>
+    </header>    <div class="ex2">
+        <article class="ex2__main">
+          <h3><span class="ex2__big">100+</span> бонусных тренировок под любой запрос</h3>
+          <p>Скорая помощь и проработка по зонам: осанка, таз, живот, тазовое дно</p>
+        </article>
+        <ul class="hl">
+          <li><span class="xr__ic"><svg class="ic"><use href="#i-folder"/></svg></span><div><b>50 зарядок до 15 минут</b><span>Чтобы взбодриться утром</span></div></li>
+          <li><span class="xr__ic"><svg class="ic"><use href="#i-folder"/></svg></span><div><b>Питание и образ жизни</b><span>Лекции нутрициолога и готовые рационы от фитнес-тренера и нутрициолога Анжелы Игнатовой</span></div></li>
+          <li><span class="xr__ic"><svg class="ic"><use href="#i-folder"/></svg></span><div><b>Лекции Натальи о теле и здоровье</b><span>Дыхание и плоский живот, мышцы тазового дна, ягодицы</span></div></li>
+          <li><span class="xr__ic"><svg class="ic"><use href="#i-folder"/></svg></span><div><b>Лекции приглашённых экспертов</b><span>KINEZIO FITNESS, стилист, психотерапевт</span></div></li>
+        </ul>
+      </div>
+  </div>
+</section>
+
+<!-- 7 — РЕЗУЛЬТАТЫ И О НАТАЛЬЕ -->
+<section class="sec sec--tint" id="results">
+  <div class="wrap">
+    <!-- результаты участниц скрыты: чтобы вернуть, удалить hidden у заголовка и у .rail -->
+    <header class="sec__head" hidden>
+      <span class="tag">#результаты</span>
+      <h2>Результаты участниц и&nbsp;их запросы</h2>
+      <p class="lead">Реальные истории — с фото «до/после» и в словах самих участниц.</p>
+    </header>
+
+    <div class="rail" id="rail" hidden>
+      <ul class="rail__track" tabindex="0" aria-label="Истории участниц">
+        <li class="story">
+          <img src="img/t/t36623961-1.webp" alt="Фото до и после — Ирина Гришкова" width="560" height="560" loading="lazy">
+          <div class="story__body">
+            <p class="story__ask">Зажатая шея и трапеция, боль между лопаток, осанка</p>
+            <blockquote>«Попа начала появляться там, где ее никогда не было»</blockquote>
+            <p class="story__name">Ирина Гришкова</p>
+            <a class="link" href="/results">Читать историю <svg class="ic"><use href="#i-arrow"/></svg></a>
+          </div>
+        </li>
+        <li class="story">
+          <img src="img/t/t64323766-frame_1321318635.webp" alt="Фото до и после — Анастасия Колесникова" width="560" height="560" loading="lazy">
+          <div class="story__body">
+            <p class="story__ask">Боль в шее и лопатках, болезненный цикл, отёки</p>
+            <blockquote>«Я просто чувствую себя человеком, у которого ничего не болит»</blockquote>
+            <p class="story__name">Анастасия Колесникова</p>
+            <a class="link" href="/results">Читать историю <svg class="ic"><use href="#i-arrow"/></svg></a>
+          </div>
+        </li>
+        <li class="story">
+          <img src="img/t/t61633138-frame_1321318649.webp" alt="Фото до и после — Мария Щербакова" width="560" height="560" loading="lazy">
+          <div class="story__body">
+            <p class="story__ask">Боли в шее, лопатке и пояснице, болезненные месячные</p>
+            <blockquote>«Просто невероятное счастье, когда твое тело функционально и ничего не болит»</blockquote>
+            <p class="story__name">Мария Щербакова</p>
+            <a class="link" href="/results">Читать историю <svg class="ic"><use href="#i-arrow"/></svg></a>
+          </div>
+        </li>
+        <li class="story">
+          <img src="img/t/t35393862-frame_1321318643.webp" alt="Фото до и после — Юлия Глазко" width="560" height="560" loading="lazy">
+          <div class="story__body">
+            <p class="story__ask">Боль в пояснице и тазобедренных суставах</p>
+            <blockquote>«Живот не надувается после приема пищи, я почти забыла про боль в пояснице»</blockquote>
+            <p class="story__name">Юлия Глазко</p>
+            <a class="link" href="/results">Читать историю <svg class="ic"><use href="#i-arrow"/></svg></a>
+          </div>
+        </li>
+        <li class="story">
+          <img src="img/t/t33346434-frame_1321318667.webp" alt="Фото до и после — Екатерина Кельчевская" width="560" height="560" loading="lazy">
+          <div class="story__body">
+            <p class="story__ask">Боль в спине и лопатках, сутулая осанка, живот</p>
+            <blockquote>«Стала замечать как расправляется моя грудь и подтягивается живот»</blockquote>
+            <p class="story__name">Екатерина Кельчевская</p>
+            <a class="link" href="/results">Читать историю <svg class="ic"><use href="#i-arrow"/></svg></a>
+          </div>
+        </li>
+        <li class="story">
+          <img src="img/t/t62353631-frame_1321318672.webp" alt="Фото до и после — Анастасия Романова" width="560" height="560" loading="lazy">
+          <div class="story__body">
+            <p class="story__ask">Отёчность и вздутие живота</p>
+            <blockquote>«Наталья открыла мне глаза, что все нужно делать по другому, дышать правильно и живот расслабить»</blockquote>
+            <p class="story__name">Анастасия Романова</p>
+            <a class="link" href="/results">Читать историю <svg class="ic"><use href="#i-arrow"/></svg></a>
+          </div>
+        </li>
+        <li class="story">
+          <img src="img/t/t37353333-frame_1321318713.webp" alt="Фото до и после — участница SushaMusha" width="560" height="560" loading="lazy">
+          <div class="story__body">
+            <p class="story__ask">Поясница, выпирающий живот, форма ягодиц</p>
+            <blockquote>«Я уже в январе поняла что поясница НЕ БОЛИТ»</blockquote>
+            <p class="story__name">SushaMusha</p>
+            <a class="link" href="/results">Читать историю <svg class="ic"><use href="#i-arrow"/></svg></a>
+          </div>
+        </li>
+        <li class="story story--more">
+          <div class="story__body">
+            <p class="story__more-t">Больше историй</p>
+            <p>Все результаты участниц с запросами и подробными рассказами.</p>
+            <a class="btn btn--white" href="/results">Все результаты <svg class="ic"><use href="#i-arrow"/></svg></a>
+          </div>
+        </li>
+      </ul>
+      <div class="rail__ctl">
+        <button type="button" class="round" data-dir="-1" aria-label="Назад"><svg class="ic ic--flip"><use href="#i-arrow"/></svg></button>
+        <button type="button" class="round" data-dir="1" aria-label="Вперёд"><svg class="ic"><use href="#i-arrow"/></svg></button>
+      </div>
+    </div>
+
+        <div class="tr2">
+        <figure class="tr2__ph">
+          <img src="img/t/t39376632-image.webp" alt="Наталья Попович на тренировке" width="930" height="1026" loading="lazy">
+          <figcaption class="sticker"><small>Опыт</small><b>13+ лет посвящённых фитнесу</b></figcaption>
+        </figure>
+        <div class="tr2__body">
+          <h2 class="trainer__h">Наталья Попович</h2>
+          <p class="trainer__role">Тренер, создатель POPOVICHFIT</p>
+          <p class="trainer__big">Мой фитнес-клуб&nbsp;— это весь мой опыт с&nbsp;2013 года</p>
+          <p class="trainer__lead">Сотни пройденных обучений, несколько лет посещения кадавер-курсов и более 20&nbsp;000 тренировок, которые я провела лично за 7 лет работы в зале и в своей фитнес-студии, прежде чем начала делать онлайн-курсы</p>
+          <p class="trainer__lead">Я регулярно обучаюсь и прохожу повышение квалификации</p>
+          <p class="trainer__lead">Особое внимание я уделяю женскому здоровью, обучаясь у гинекологов и урологов</p>
+          <div class="certs" aria-label="Сертификаты">
+            <a href="/sertif"><img src="img/t/t61373034-__2_page-0001.webp" alt="Сертификат" width="160" height="113" loading="lazy"></a>
+            <a href="/sertif"><img src="img/t/t37316635-photo_2024-03-16_130.webp" alt="Сертификат" width="160" height="113" loading="lazy"></a>
+            <a href="/sertif"><img src="img/t/t31343238-__2023-11-10__185929.webp" alt="Сертификат" width="160" height="111" loading="lazy"></a>
+            <a class="certs__more" href="/sertif">Все сертификаты <svg class="ic"><use href="#i-arrow"/></svg></a>
+          </div>
+          <a class="btn btn--primary tr2__btn" href="/about">Подробнее обо мне <svg class="ic"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- 8 — ВАРИАНТЫ УЧАСТИЯ -->
+<section class="sec" id="options">
+  <div class="wrap">
+    <header class="sec__head">
+      <span class="tag">#участие</span>
+      <h2>Самостоятельно или с поддержкой куратора</h2>
+    </header>    <div class="op2">
+        <div class="op2__opts">
+          <article class="op2__opt"><h3>Самостоятельное прохождение</h3><p>Занимаетесь в своём режиме</p></article>
+          <article class="op2__opt op2__opt--hot"><h3>С поддержкой куратора</h3><p>Проверка техники и ответы на вопросы по тренировкам в закрытом групповом чате Telegram</p></article>
+        </div>
+        <div class="op2__streams">
+          <h3>Можно выбрать 1, 3 или 6 потоков</h3>
+          <ul class="op2__tiles">
+            <li><b>1 поток</b><span>5 недель</span></li>
+            <li><b>3 потока</b><span>15 недель</span></li>
+            <li><b>6 потоков</b><span>30 недель</span></li>
+          </ul>
+          <p class="streams__note">При покупке нескольких потоков вы переходите в следующий по расписанию</p>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- 9 — FITBONUS: место под блок, текст будет добавлен отдельно. Пока скрыт; чтобы вернуть, удалить атрибут hidden у секции -->
+<section class="sec sec--flush" id="bonus" hidden>
+  <div class="wrap">
+    <div class="bonus">
+      <header class="bonus__head">
+        <span class="tag tag--lime">#fitbonus</span>
+        <h2>FitBonus</h2>
+        <p class="bonus__lead">Программа лояльности и реферальная программа</p>
+      </header>
+
+      <div class="bonus__stats" aria-label="Бонусы в 2026 году">
+        <div class="bstat"><span>Начислено в 2026</span><b data-slot="accrued">—</b></div>
+        <div class="bstat"><span>Списано в 2026</span><b data-slot="spent">—</b></div>
+      </div>
+
+      <h3 class="bonus__t">Выбирайте, как их использовать</h3>
+      <div class="bonus__opts">
+        <div class="bo"><span class="bo__n">01</span><p>Оплачивайте бонусами следующие потоки</p></div>
+        <div class="bo"><span class="bo__n">02</span><p>Накапливайте и выводите деньги на карту</p></div>
+      </div>
+
+      <a class="btn btn--dark bonus__btn" href="#bonus">Условия начисления, оплаты бонусами и вывода <svg class="ic"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- 10 — ПРОДОЛЖЕНИЕ ЗАНЯТИЙ И ВОПРОСЫ -->
+<section class="sec sec--join" id="next">
+  <div class="wrap">
+    <header class="sec__head">
+      <span class="tag">#дальше</span>
+      <h2>Ответы на вопросы</h2>
+    </header>
+
+        <div class="faq3">
+          <div class="fq__list">
+            <details class="qa" name="faq-a">
+              <summary>Когда открывается доступ к новому потоку курса? Где искать тренировки?<i class="qa__ic" aria-hidden="true"></i></summary>
+              <div class="qa__a">
+                <p>После оплаты курса Вам на почту приходит письмо с доступом в личный кабинет</p>
+                <p>В личном кабинете доступ к новому потоку открывается за день до старта потока (в воскресенье) в 20:00 МСК</p>
+                <p>Доступ закрывается через 5 недель (также в воскресенье, в 23:59 МСК)</p>
+                <p>Каждая последующая неделя тренировок открывается в воскресенье, все предыдущие тренировки остаются открытыми</p>
+              </div>
+            </details>
+            <details class="qa" name="faq-a">
+              <summary>Когда я могу приступить к курсу и сколько он продлится?<i class="qa__ic" aria-hidden="true"></i></summary>
+              <div class="qa__a">
+                <p>Дата начала и окончания каждого потока курса строго регламентированы и зависят от Вашего абонемента — 1 поток (5 недель тренировок), 3 потока (15 недель тренировок), 6 потоков (30 недель)</p>
+                <p>При абонементах на 3 потока, 6 потоков вы автоматически переходите в следующие потоки</p>
+                <p>В следующий обновлённый поток старый не сохраняется</p>
+              </div>
+            </details>
+            <details class="qa" name="faq-a">
+              <summary>В какое время проходят тренировки?<i class="qa__ic" aria-hidden="true"></i></summary>
+              <div class="qa__a">
+                <p>Тренировки уже сняты, вы занимаетесь в удобное для вас время</p>
+                <p>Каждое воскресенье открывается вся последующая неделя тренировок, они сохраняются в личном кабинете до окончания курса</p>
+              </div>
+            </details>
+            <details class="qa" name="faq-a">
+              <summary>Могу ли я задать вопрос, выслать технику упражнений?<i class="qa__ic" aria-hidden="true"></i></summary>
+              <div class="qa__a">
+                <p>Обратная связь от тренеров предусмотрена на тарифах «Коррекция с тренером» и «Силовой с тренером»</p>
+              </div>
+            </details>
+            <details class="qa" name="faq-a">
+              <summary>Тренировки для дома или зала?<i class="qa__ic" aria-hidden="true"></i></summary>
+              <div class="qa__a">
+                <p>Вы тренируетесь, где Вам удобно — можно и дома, и в зале (дома понадобится <a class="inl" href="/inventory">оборудование</a>)</p>
+              </div>
+            </details>
+            <details class="qa" name="faq-a">
+              <summary>Как понять, нужно ли мне продлевать доступ к курсу?<i class="qa__ic" aria-hidden="true"></i></summary>
+              <div class="qa__a">
+                <p>Если Вам нужно продлевать доступ — в личном кабинете на стартовой странице есть большая кнопка «Продлить»</p>
+                <p>Доступ к новому потоку открывается за день до старта потока в 20:00 МСК. Доступ закрывается через 5 недель (также в воскресенье, в 23:59 МСК)</p>
+              </div>
+            </details>
+            <details class="qa" name="faq-a">
+              <summary>Как работает подписка<i class="qa__ic" aria-hidden="true"></i></summary>
+              <div class="qa__a">
+                <ul class="qa__bul">
+                  <li>Подключить подписку можно в личном кабинете после покупки курса</li>
+                  <li>С подпиской продлевать доступ выгоднее, чем разово, и цена сохраняется, пока подписка активна</li>
+                  <li>Следующий поток продлевается автоматически: не нужно следить за датами продаж и бояться не успеть продлить</li>
+                  <li>Перед списанием пришлём письмо с суммой и датой</li>
+                  <li>Отключить подписку можно в любой момент там же, в личном кабинете. Оплаченный доступ сохранится до конца потока</li>
+                </ul>
+              </div>
+            </details>
+            <details class="qa" name="faq-a">
+              <summary>Как посмотреть, до какого числа у меня доступ к курсу?<i class="qa__ic" aria-hidden="true"></i></summary>
+              <div class="qa__a">
+                <p>У Вас на стартовой странице в личном кабинете видно, до какого числа доступ, если нажать на кнопку <a class="inl" href="https://lk.popovichfit.ru/" target="_blank" rel="noopener">«Личный кабинет»</a></p>
+              </div>
+            </details>
+          </div>
+          <div class="fq__list">
+            <details class="qa" name="faq-b">
+              <summary>Можно ли «заморозить» абонемент или перенести абонемент на другой тариф?<i class="qa__ic" aria-hidden="true"></i></summary>
+              <div class="qa__a">
+                <p>«Заморозка» абонемента возможна только по медицинским показаниям с предоставлением медицинской справки от лечащего врача. Перенос абонемента на другой тариф невозможен, даже при условии доплаты</p>
+              </div>
+            </details>
+            <details class="qa" name="faq-b">
+              <summary>Насколько заранее можно купить следующий абонемент при наличии действующего?<i class="qa__ic" aria-hidden="true"></i></summary>
+              <div class="qa__a">
+                <p>Вы можете купить следующий абонемент при условии, что Ваш текущий абонемент заканчивается через 3 потока или менее. После оплаты напишите в чат поддержки адрес электронной почты, чтобы мы могли перенести новый абонемент после окончания Вашего текущего абонемента</p>
+              </div>
+            </details>
+            <details class="qa" name="faq-b">
+              <summary>Можно ли на курс беременным?<i class="qa__ic" aria-hidden="true"></i></summary>
+              <div class="qa__a">
+                <p>В POPOVICHFIT нет специализированного курса для беременных</p>
+                <p>После родов, с первого дня рекомендуем пойти на Основной курс, тариф «Коррекция с куратором» для качественного и лёгкого послеродового восстановления</p>
+                <p><button class="inl" type="button" data-open="contra">Противопоказания при тренировках в беременность</button></p>
+              </div>
+            </details>
+            <details class="qa" name="faq-b">
+              <summary>Я оплатила курс с помощью кредита, а у меня нет никакого уведомления на почте. Что делать?<i class="qa__ic" aria-hidden="true"></i></summary>
+              <div class="qa__a">
+                <p>Вы получите письмо и будете добавлены на курс в течение 3-х рабочих дней после оформления покупки. Сначала банк передаёт нам данные о Вашем кредите, затем сотрудники техподдержки вручную вносят Ваши данные, после этого Вам приходит письмо с подтверждением участия в курсе</p>
+              </div>
+            </details>
+            <details class="qa" name="faq-b">
+              <summary>Через какое время после родов можно приступать к тренировкам?<i class="qa__ic" aria-hidden="true"></i></summary>
+              <div class="qa__a">
+                <p>ЕР: дыхательные практики — с 1 дня, далее (по самочувствию) — коррекции 1 уровня сложности на протяжении не менее 2 месяцев</p>
+                <p>КС: приступать к коррекциям 1 уровня сложности не менее чем через 1 месяц (когда шов затянулся полностью). Коррекции выполнять на протяжении не менее 4–6 месяцев</p>
+                <p>Для послеродового сопровождения рекомендуем тариф «С обратной связью от тренера»</p>
+              </div>
+            </details>
+            <details class="qa" name="faq-b">
+              <summary>Как выстроена работа с куратором на тарифе с обратной связью?<i class="qa__ic" aria-hidden="true"></i></summary>
+              <div class="qa__a">
+                <ul class="qa__bul">
+                  <li>Общение с куратором и обратная связь даются в закрытом чате Telegram</li>
+                  <li>Чат групповой и создаётся отдельно под каждый поток</li>
+                  <li>Куратор разбирает технику выполнения упражнений и отвечает на возникающие вопросы</li>
+                  <li>Куратор не делает диагностику осанки</li>
+                  <li>Куратор начинает разборы с 1-го уровня сложности и даёт личные рекомендации по мере Вашей прогрессии</li>
+                </ul>
+                <p>Такой регламент проверки техники упражнений, разработанный Натальей, очень хорошо зарекомендовал себя за годы существования проекта и показал свою эффективность среди участниц</p>
+              </div>
+            </details>
+            <details class="qa" name="faq-b">
+              <summary>Можно ли подарить курс другому человеку?<i class="qa__ic" aria-hidden="true"></i></summary>
+              <div class="qa__a">
+                <p>Да. Вы выбираете курс и тариф, мы оформляем сертификат и отправляем его Вам на почту. Вы передаёте его тому, кому хотите</p>
+                <p>Сертификат действует 6 месяцев, поток получатель выбирает сам при активации. Чтобы оформить подарок, напишите в поддержку</p>
+                <p><a class="link" href="https://t.me/PopovichfitCare_Bot" target="_blank" rel="noopener">Написать в поддержку <svg class="ic"><use href="#i-arrow"/></svg></a></p>
+              </div>
+            </details>
+          </div>
+        </div>
+
+    <div class="help">
+      <h3>Если остались вопросы</h3>
+      <a class="link" href="https://t.me/PopovichfitCare_Bot" target="_blank" rel="noopener">Написать в поддержку <svg class="ic"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- 11 — ПРИСОЕДИНИТЬСЯ К КЛУБУ -->
+<section class="final" id="final">
+  <div class="wrap">
+    <div class="final__card">
+          <div class="fn2">
+        <h2>Не откладывайте ещё на&nbsp;5 недель</h2>
+        <p class="fn2__date" data-sales-only="open"><b>9 ноября начинаем следующий поток</b><span>Потом только 14 декабря</span></p>
+        <div class="fn2__cta" data-sales-only="open">
+          <div class="cta2">
+            <a class="btn btn--white" href="/course_correction">Коррекция <svg class="ic"><use href="#i-arrow"/></svg></a>
+            <p>Осанка, дыхание, тазовое дно, плоский живот</p>
+          </div>
+          <div class="cta2">
+            <a class="btn btn--white" href="/course_power">Силовой <svg class="ic"><use href="#i-arrow"/></svg></a>
+            <p>Сила, рельеф, ягодицы + коррекционные упражнения</p>
+          </div>
+        </div>
+        <p class="fn2__close" data-sales-only="open">Продажи закрываются 8 ноября в 23:59 МСК</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <img class="foot__mark" src="img/t/t32633830-popovichfit.svg" alt="POPOVICHFIT" width="1154" height="139" loading="lazy">
+    <div class="foot__cols">
+      <nav aria-label="Разделы"><h4>Разделы</h4>
+        <a href="/new/">Главная</a><a href="#courses">Курсы</a><a href="/results">Результаты</a><a href="/about">Обо мне</a><a href="/media">Media</a><a href="/community">Сообщество</a><a href="https://t.me/PopovichfitCare_Bot" target="_blank" rel="noopener">Тех.поддержка</a>
+      </nav>
+      <nav aria-label="Документы"><h4>Документы</h4>
+        <a href="/oferta">Договор-оферта</a><a href="/part_oferta">Партнерское соглашение (Договор-оферта) о реферальной программе</a><a href="/privacy">Политика в отношении обработки персональных данных</a><a href="/data-consent">Согласие на обработку персональных данных</a><a href="/consent">Согласие на рассылку информационных сообщений</a>
+      </nav>
+      <div><h4>Контакты</h4>
+        <p>ИП Попович Наталья Викторовна<br>ИНН: 780528255230</p>
+        <a href="mailto:info@popovichfit.ru">info@popovichfit.ru</a>
+        <div class="soc">
+          <a href="https://t.me/natalyapopovich87" target="_blank" rel="noopener" aria-label="Telegram"><img src="img/t/t34633361-telegram_logo_icon_1.svg" alt="" width="20" height="20"></a>
+          <a href="https://www.youtube.com/@popovichfit" target="_blank" rel="noopener" aria-label="YouTube"><img src="img/t/t63656531-iconfinder-youtube-4.svg" alt="" width="20" height="20"></a>
+          <a href="https://instagram.com/natalyapopovich" target="_blank" rel="noopener" aria-label="Instagram*"><img src="img/t/t35306633-instagram_black_logo.svg" alt="" width="20" height="20"></a>
+          <a class="soc__vk" href="https://vk.com/popovichfit" target="_blank" rel="noopener" aria-label="ВКонтакте">VK</a>
+        </div>
+      </div>
+    </div>
+    <p class="foot__legal">*Meta признана экстремистской организацией на территории РФ</p>
+  </div>
+</footer>
+
+<!-- нижняя панель действий (мобильная) -->
+<div class="dock" id="dock" aria-hidden="true">
+  <a class="btn btn--primary" data-sales-only="open" href="/course_correction" tabindex="-1">Коррекция</a>
+  <a class="btn btn--primary" data-sales-only="open" href="/course_power" tabindex="-1">Силовой</a>
+</div>
+
+<!-- модальные окна -->
+<dialog class="modal" id="m-schedule" aria-labelledby="m-schedule-t">
+  <form method="dialog"><button class="modal__x" aria-label="Закрыть"><svg class="ic"><use href="#i-close"/></svg></button></form>
+  <h3 id="m-schedule-t">Расписание потоков</h3>
+  <ul class="timeline">
+    <li class="tl-start is-main"><span class="timeline__k">Старт продаж</span><span class="timeline__d">30 октября, 10:00 МСК</span><span>Откроем продажи в боте. В боте — цены по предзаписи</span></li>
+    <li class="tl-end"><span class="timeline__k">Конец продаж</span><span class="timeline__d">8 ноября, 23:59 МСК</span><span>Продажи в боте закрываются</span></li>
+    <li><span class="timeline__k">Старт потока</span><span class="timeline__d">9 ноября</span><span>Длительность — 5 недель</span></li>
+  </ul>
+  <a class="btn btn--primary btn--block" href="https://t.me/popovichfitcourse_bot" target="_blank" rel="noopener">Перейти в бот <svg class="ic"><use href="#i-arrow"/></svg></a>
+</dialog>
+
+<dialog class="modal" id="m-contra" aria-labelledby="m-contra-t">
+  <form method="dialog"><button class="modal__x" aria-label="Закрыть"><svg class="ic"><use href="#i-close"/></svg></button></form>
+  <h3 id="m-contra-t">Противопоказания при тренировках в беременность</h3>
+  <div class="modal__scroll">
+    <p>Тренировки в беременность не подходят, если есть:</p>
+    <ul class="qa__bul">
+                  <li>Предлежание плаценты</li>
+                  <li>Любые кровотечения</li>
+                  <li>Любые угрозы для плода: выкидыш, риск преждевременных родов и т. д.</li>
+                  <li>Разрыв плодных оболочек</li>
+                  <li>Истмико-цервикальная недостаточность (укорочение шейки матки до 1,5 см и расширение канала шейки до 1 см), не скорректированная (без пессария, серкляжа и др.)</li>
+                  <li>Преэклампсия (гестоз) или гипертензия, ассоциированная с беременностью</li>
+                  <li>Анемия (уровень гемоглобина менее 70 г/л)</li>
+                  <li>Хронически повышенное артериальное давление</li>
+                  <li>Многоплодная беременность высокого риска</li>
+                  <li>Любые другие акушерские или медицинские противопоказания</li>
+                </ul>
+    <p>Если остались вопросы — напишите, и мы поможем, подойдут ли Вам тренировки в зависимости от рекомендаций врача и Вашего состояния здоровья</p>
+  </div>
+  <a class="btn btn--primary btn--block" href="https://t.me/PopovichfitCare_Bot" target="_blank" rel="noopener">Написать в поддержку <svg class="ic"><use href="#i-arrow"/></svg></a>
+</dialog>
+
+<dialog class="modal modal--video" id="m-video" aria-label="Видео: Коррекция и Силовой — какой курс выбрать">
+  <form method="dialog"><button class="modal__x" aria-label="Закрыть"><svg class="ic"><use href="#i-close"/></svg></button></form>
+  <div class="modal__frame" id="videoFrame"></div>
+</dialog>
+
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+  /* ───── мобильное меню (выезжает слева, как на других страницах) ───── */
+  const burger = $('.burger');
+  const menu = $('#sheet');
+  let closeTimer;
+  const setMenu = (open) => {
+    clearTimeout(closeTimer);
+    burger.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('is-locked', open);
+    if (open) {
+      menu.hidden = false;
+      setTimeout(() => menu.classList.add('is-open'), 30);
+      $('.menu__x', menu).focus({ preventScroll: true });
+    } else {
+      menu.classList.remove('is-open');
+      closeTimer = setTimeout(() => { menu.hidden = true; }, 300);
+    }
+  };
+  burger.addEventListener('click', () => setMenu(menu.hidden));
+  menu.addEventListener('click', (e) => {
+    if (e.target.closest('[data-close],.menu__x,.menu__nav a,.menu__btn')) setMenu(false);
+  });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) { setMenu(false); burger.focus(); } });
+  matchMedia('(min-width:1024px)').addEventListener('change', (m) => { if (m.matches && !menu.hidden) { menu.hidden = true; menu.classList.remove('is-open'); document.body.classList.remove('is-locked'); } });
+
+  /* ───── служебный переключатель: продажи закрыты / открыты ───── */
+  const salesBtns = $$('.salesw button');
+  const setSales = (m, save) => {
+    document.documentElement.dataset.sales = m;
+    salesBtns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.sales === m)));
+    if (save) { try { localStorage.setItem('pf-sales', m); } catch (e) { /* без хранилища тоже работает */ } }
+  };
+  setSales(document.documentElement.dataset.sales || 'closed', false);
+  salesBtns.forEach((b) => b.addEventListener('click', () => setSales(b.dataset.sales, true)));
+
+  /* ───── карусель результатов ───── */
+  const track = $('.rail__track');
+  $$('.rail__ctl .round').forEach((b) => b.addEventListener('click', () => {
+    const card = track.querySelector('.story');
+    track.scrollBy({ left: Number(b.dataset.dir) * (card.offsetWidth + 20) * 2, behavior: 'smooth' });
+  }));
+
+  /* ───── нижняя панель действий (мобильная) ───── */
+  const dock = $('#dock');
+  const seen = { hero: true, final: false };
+  const syncDock = () => {
+    const on = !seen.hero && !seen.final;
+    dock.classList.toggle('is-on', on);
+    dock.setAttribute('aria-hidden', String(!on));
+    $$('a', dock).forEach((a) => (a.tabIndex = on ? 0 : -1));
+  };
+  if ('IntersectionObserver' in window && dock && $('#heroActions') && $('#final')) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { seen[e.target.dataset.watch] = e.isIntersecting; });
+      syncDock();
+    });
+    $('#heroActions').dataset.watch = 'hero';
+    $('#final').dataset.watch = 'final';
+    io.observe($('#heroActions'));
+    io.observe($('#final'));
+    seen.hero = false;
+  }
+
+  /* ───── модальные окна ───── */
+  const VIDEO = 'https://kinescope.io/embed/iv769rTaa71GS556RpcQdn';
+  const frame = $('#videoFrame');
+  $$('[data-open]').forEach((btn) => btn.addEventListener('click', () => {
+    const dlg = $('#m-' + btn.dataset.open);
+    if (btn.dataset.open === 'video') {
+      frame.innerHTML = `<iframe src="${VIDEO}" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; clipboard-write" allowfullscreen title="Коррекция и Силовой: какой курс выбрать"></iframe>`;
+    }
+    dlg.showModal();
+  }));
+  $$('dialog.modal').forEach((dlg) => {
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+    // останавливаем видео сразу при закрытии (атрибут open снимается синхронно)
+    new MutationObserver(() => { if (!dlg.open && dlg.id === 'm-video') frame.innerHTML = ''; })
+      .observe(dlg, { attributes: true, attributeFilter: ['open'] });
+  });
+
+  /* ───── появление при прокрутке ───── */
+  const calm = matchMedia('(prefers-reduced-motion: reduce)').matches || navigator.webdriver || location.search.includes('static');
+  if ('IntersectionObserver' in window && !calm) {
+    document.documentElement.classList.add('js-rv');
+    // первый блок после главного экрана не анимируем: его заголовок должен быть виден сразу
+    const targets = $$('.sec__head,.tools,.approach__ph,.roots,.statement,.club__list,.club__more,.club__media,.course,.choose,.phones__stage,.steps li,.stream,.cover,.xr,.story,.trainer,.opt,.streams,.bonus,.next,.final__card').filter((el) => !el.closest('#approach'));
+    const ro = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    targets.forEach((el, i) => {
+      el.classList.add('rv');
+      el.style.transitionDelay = `${(i % 4) * 70}ms`;
+      ro.observe(el);
+    });
+  }
+})();
+
+</script>
+</body>
+</html>
