@@ -217,6 +217,8 @@ function build(variant) {
   cut(/<!-- мобильное меню[\s\S]*?(?=<main)/, "меню");
   cut(/<footer class="foot">[\s\S]*?<\/footer>/, "подвал");
   if (/href="\/new\/"/.test(body)) fail(`${variant}: осталась ссылка /new/ (на сайте 404)`);
+  // продажи открыты: кнопки покупки ведут на страницы предзаказа (решение Елены 29.10)
+  if (variant === "open") body = body.replace(/href="\/course_correction"/g, 'href="/predcor"').replace(/href="\/course_power"/g, 'href="/predpow"');
 
   // анимация клуба ниже первого экрана — грузим по мере прокрутки
   body = body.replace('class="club__vid" src=', 'class="club__vid" loading="lazy" src=');
