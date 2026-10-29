@@ -37,13 +37,23 @@ const minifyCss = (c) => esbuild(c, ["--minify", "--charset=utf8", "--loader=css
 /* ───── ассеты: копия с хешем, jpg/png → webp ───── */
 const assetMap = new Map(); // "img/x.jpg" → "img/x.<hash>.webp"
 fs.rmSync(path.join(ROOT, "assets"), { recursive: true, force: true });
+// картинки, которые показываются намного мельче исходника: ширина = 3 × размер на экране
+const RESIZE = {
+  "img/t/t61373034-__2_page-0001.webp": 252, // сертификаты 84×62
+  "img/t/t37316635-photo_2024-03-16_130.webp": 252,
+  "img/t/t31343238-__2023-11-10__185929.webp": 252,
+};
 function asset(rel) {
   if (assetMap.has(rel)) return assetMap.get(rel);
   const from = path.join(SRC, rel);
   if (!fs.existsSync(from)) fail("нет файла " + rel);
   let buf = fs.readFileSync(from);
   let ext = path.extname(rel);
-  if (/\.(jpe?g|png)$/i.test(ext)) {
+  if (RESIZE[rel]) {
+    const tmp = path.join(ROOT, "node_modules/.tmp.webp");
+    execFileSync("cwebp", ["-quiet", "-q", "86", "-m", "6", "-resize", String(RESIZE[rel]), "0", from, "-o", tmp]);
+    buf = fs.readFileSync(tmp); fs.rmSync(tmp);
+  } else if (/\.(jpe?g|png)$/i.test(ext)) {
     const tmp = path.join(ROOT, "node_modules/.tmp.webp");
     execFileSync("cwebp", ["-quiet", "-q", "86", "-m", "6", from, "-o", tmp]);
     buf = fs.readFileSync(tmp); fs.rmSync(tmp); ext = ".webp";
@@ -149,6 +159,8 @@ function build(variant) {
   cut(/<footer class="foot">[\s\S]*?<\/footer>/, "подвал");
   if (/href="\/new\/"/.test(body)) fail(`${variant}: осталась ссылка /new/ (на сайте 404)`);
 
+  // анимация клуба ниже первого экрана — грузим по мере прокрутки
+  body = body.replace('class="club__vid" src=', 'class="club__vid" loading="lazy" src=');
   body = typo(rewriteUrls(body));
   const html = minifyHtml(`<div class="pfh" data-sales="${variant}">${body}</div>`);
 
@@ -164,7 +176,8 @@ function build(variant) {
   css = minifyCss(fontFaces + css);
   const preload = ["fonts/involve/Involve-600__Involve-SemiBold.woff", "fonts/Manrope-500-cyrillic.woff2"]
     .map((f) => `<link rel="preload" href="${BASE + asset(f)}" as="font" type="font/${f.endsWith("2") ? "woff2" : "woff"}" crossorigin>`).join("");
-  const cssBlock = `${preload}<style>${css}</style>`;
+  const heroImg = (f, extra = "") => `<link rel="preload" href="${BASE + asset(f)}" as="image" type="image/webp" fetchpriority="high"${extra}>`;
+  const cssBlock = `${preload}${heroImg("img/t/t65633034-group_1321319637.webp")}${heroImg("img/t/t64376362-popovich_fit_2025040.webp")}<style>${css}</style>`;
 
   // JS: без меню и служебного переключателя, класс появления — на обёртку
   let js = js0;
