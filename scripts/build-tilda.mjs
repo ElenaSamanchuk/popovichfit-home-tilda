@@ -161,6 +161,8 @@ function build(variant) {
 
   // анимация клуба ниже первого экрана — грузим по мере прокрутки
   body = body.replace('class="club__vid" src=', 'class="club__vid" loading="lazy" src=');
+  // первые два блока (первый экран и «Подход») грузятся сразу, без отложенной загрузки
+  body = body.replace(/(<section class="sec sec--join" id="approach">[\s\S]*?<\/section>)/, (sec) => sec.replace(/ loading="lazy"/g, ""));
   body = typo(rewriteUrls(body));
   const html = minifyHtml(`<div class="pfh" data-sales="${variant}">${body}</div>`);
 
@@ -187,7 +189,7 @@ function build(variant) {
   js = js.replace("document.documentElement.classList.add('js-rv')", () => "$$('.pfh').forEach((w) => w.classList.add('js-rv'))");
   if (!js.includes("$$('.pfh')")) fail("js: не заменила js-rv");
   // метки как на живой главной: r и utm_* передаём во внутренние ссылки,
-  // при r ссылка на бота курсов уходит в salebot с r в utm_content
+  // при r ссылка на бота курсов уходит в salebot с r в utm_content (как на живой главной, решение Елены 29.10)
   const UTM = `
   /* ───── метки r и utm_* ───── */
   const qs = new URLSearchParams(location.search);
@@ -196,7 +198,7 @@ function build(variant) {
   if (Object.keys(pass).length) {
     $$('.pfh a[href]').forEach((a) => {
       const href = a.getAttribute('href');
-      if (/^https:\\/\\/t\\.me\\/POPOVICHcourse_bot/i.test(href)) {
+      if (/^https:\\/\\/t\\.me\\/(POPOVICHcourse_bot|popovichfitcourse_bot)/i.test(href)) {
         if (pass.r) a.setAttribute('href', 'https://salebot.site/62b5cbabae0fe1409f44ce65d9274be9_1?utm_content=r%3D' + encodeURIComponent(pass.r));
         return;
       }
