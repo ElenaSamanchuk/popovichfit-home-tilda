@@ -121,7 +121,8 @@ function typo(html) {
     // точки в конце абзацев убираем (многоточия и сокращения «т. д.» не трогаем)
     .replace(new RegExp(`(?<![\\s.;][а-яё])([^.\\s])\\.(\\s*<\\/(?:${END})>)`, "giu"), "$1$2")
     // последнее слово не остаётся одно в строке: склеиваем с предыдущим
-    .replace(new RegExp(`(>[^<]*?[^\\s>;])[ \\t\\n]+([^\\s<&]{1,14})(\\s*<\\/(?:${END})>)`, "giu"), "$1&nbsp;$2$3");
+    // (только короткие слова — длинная склейка не помещается на 320 px)
+    .replace(new RegExp(`(>[^<]*?(?:^|[\\s>;])[^\\s<>&;]{1,10})[ \\t\\n]+([^\\s<&]{1,7})(\\s*<\\/(?:${END})>)`, "giu"), "$1&nbsp;$2$3");
 }
 
 function minifyHtml(html) {
@@ -155,7 +156,7 @@ function build(variant) {
   let css = rewriteUrls(css0.replace(/\/\*[\s\S]*?\*\//g, ""));
   const fontFaces = css.match(/@font-face\{[^}]*\}/g).join("");
   // защита от глобальных стилей Тильды: цвет заголовков и ссылок — от родителя (ставим первым, правила страницы перекрывают)
-  const guard = `${P} :is(h1,h2,h3,h4,h5,h6,p,li,a,b,small,span){color:inherit}${P} :is(ul,ol){padding-left:0}`;
+  const guard = `${P} :is(h1,h2,h3,h4,h5,h6,p,li,a,b,small,span){color:inherit}${P} :is(ul,ol){padding-left:0}${P} h1{font-size:2em}${P} h2{font-size:1.5em}${P} h3{font-size:1.17em}${P} h4{font-size:1em}`;
   css = guard + scopeCss(css.replace(/@font-face\{[^}]*\}/g, ""))
     .replace(/animation:(\s*)(pulse|pop)\b/g, "animation:$1pfh-$2");
   // якоря внутри страницы не должны уезжать под фиксированную шапку Тильды
@@ -172,6 +173,32 @@ function build(variant) {
   jcut(/\/\* ─+ служебный переключатель[\s\S]*?(?=\/\* ─+ карусель)/, "переключатель продаж");
   js = js.replace("document.documentElement.classList.add('js-rv')", () => "$$('.pfh').forEach((w) => w.classList.add('js-rv'))");
   if (!js.includes("$$('.pfh')")) fail("js: не заменила js-rv");
+  // метки как на живой главной: r и utm_* передаём во внутренние ссылки,
+  // при r ссылка на бота курсов уходит в salebot с r в utm_content
+  const UTM = `
+  /* ───── метки r и utm_* ───── */
+  const qs = new URLSearchParams(location.search);
+  const pass = {};
+  ['r', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach((k) => { const v = qs.get(k); if (v) pass[k] = v; });
+  if (Object.keys(pass).length) {
+    $$('.pfh a[href]').forEach((a) => {
+      const href = a.getAttribute('href');
+      if (/^https:\\/\\/t\\.me\\/POPOVICHcourse_bot/i.test(href)) {
+        if (pass.r) a.setAttribute('href', 'https://salebot.site/62b5cbabae0fe1409f44ce65d9274be9_1?utm_content=r%3D' + encodeURIComponent(pass.r));
+        return;
+      }
+      if (href.startsWith('#')) return;
+      let url;
+      try { url = new URL(href, location.href); } catch (e) { return; }
+      const own = url.hostname === location.hostname || /^(www\\.)?popovichfit\\.ru$/.test(url.hostname);
+      if (!own) return;
+      Object.entries(pass).forEach(([k, v]) => url.searchParams.set(k, v));
+      a.setAttribute('href', url.toString());
+    });
+  }
+`;
+  if (!/\}\)\(\);\s*$/.test(js)) fail("js: не нашла конец IIFE");
+  js = js.replace(/\}\)\(\);\s*$/, () => UTM + "})();");
   const jsBlock = `<script>${minifyJs(js)}</script>`;
 
   const dir = path.join(ROOT, "tilda", variant);
