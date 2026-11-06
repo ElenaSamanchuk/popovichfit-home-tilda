@@ -1,0 +1,55 @@
+<script>
+(() => {
+  const popup = document.getElementById('safety');
+  if (!popup || popup.dataset.ready) return;
+  popup.dataset.ready = 'true';
+  const record = popup.closest('.t-rec');
+  if (record) { record.style.setProperty('padding-top','0px','important'); record.style.setProperty('padding-bottom','0px','important'); }
+  const hash = '#safety';
+  let lastFocus, oldHtmlOverflow, oldBodyOverflow, closing = false;
+  const open = (trigger) => {
+    if (popup.open) return;
+    lastFocus = trigger || document.activeElement;
+    oldHtmlOverflow = document.documentElement.style.overflow;
+    oldBodyOverflow = document.body.style.overflow;
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+    popup.showModal();
+    popup.querySelector('.pf-contra-body').scrollTop = 0;
+  };
+  const close = () => {
+    if (!popup.open || closing) return;
+    closing = true;
+    popup.classList.add('is-closing');
+    const delay = matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 160;
+    setTimeout(() => popup.close(), delay);
+  };
+  document.addEventListener('click', event => {
+    const link = event.target.closest?.('a[href]');
+    if (!link) return;
+    let url;
+    try { url = new URL(link.getAttribute('href'), location.href); } catch (_) { return; }
+    if (url.hash !== hash || url.origin !== location.origin || url.pathname !== location.pathname) return;
+    event.preventDefault();
+    event.stopPropagation();
+    open(link);
+  }, true);
+  popup.querySelector('.pf-contra-close').addEventListener('click', close);
+  popup.addEventListener('cancel', event => { event.preventDefault(); close(); });
+  popup.addEventListener('click', event => {
+    if (event.target !== popup) return;
+    const rect = popup.getBoundingClientRect();
+    if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) close();
+  });
+  popup.addEventListener('close', () => {
+    popup.classList.remove('is-closing');
+    closing = false;
+    if (location.hash === hash) history.replaceState(null, '', location.pathname + location.search);
+    document.documentElement.style.overflow = oldHtmlOverflow;
+    document.body.style.overflow = oldBodyOverflow;
+    if (lastFocus?.isConnected) lastFocus.focus({preventScroll:true});
+  });
+  addEventListener('hashchange', () => { if (location.hash === hash) open(); });
+  if (location.hash === hash) open();
+})();
+</script>
