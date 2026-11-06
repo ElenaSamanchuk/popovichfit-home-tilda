@@ -35,6 +35,12 @@
     open(link);
   }, true);
   popup.querySelector('.pf-contra-close').addEventListener('click', close);
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape' || !popup.open) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    close();
+  }, true);
   popup.addEventListener('cancel', event => { event.preventDefault(); close(); });
   popup.addEventListener('click', event => {
     if (event.target !== popup) return;
